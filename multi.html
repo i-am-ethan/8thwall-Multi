@@ -11,6 +11,38 @@
      <script async src="//apps.8thwall.com/xrweb?appKey=yA0UGcHdYfcepuyVp0E2D9QJbtfA41m65tZYBZJhckBJpv9VnG9IHGQino7b0IKd9d237Z"></script>
 </head>
 <body>
-    <h1>MultiPlayer.htmlに遷移しました</h1>
+    <a-scene
+      xrweb
+      xrextras-tap-recenter
+      xrextras-almost-there
+      xrextras-loading
+      xrextras-runtime-error>
+
+      <a-camera position="0 8 8"></a-camera>
+
+      <a-entity
+        light="type: directional;
+               castShadow: true;
+               intensity: 0.8;
+               shadowCameraTop: 7;
+               shadowMapHeight: 1024;
+               shadowMapWidth: 1024;"
+        position="1 4.3 2.5">
+      </a-entity>
+
+      <a-entity
+        light="type: directional; castShadow: false; intensity: 0.5;"
+        position="-0.8 3 1.85">
+      </a-entity>
+
+      <a-light type="ambient" intensity="1"></a-light>
+
+      <a-box
+        position="-1.7 0.5 -2"
+        rotation="0 45 0"
+        material="roughness: 0.8; metalness: 0.2; color: #00EDAF;"
+        shadow>
+      </a-box>
+    </a-scene>   
 </body>
 </html>
