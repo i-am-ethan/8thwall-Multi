@@ -9,10 +9,16 @@
 <body>
     <h1>8thwall MultiPlayer</h1>
     <p>新規部屋作成はこちら↓</p>
-    <a href="./multi.html">
-        <button>新規で部屋を作成する</button>
-    </a>
+    <input id="make-room" type="button" value="新規部屋作成">
     <p>部屋に参加する</p>
     <input type="text" placeholder="部屋番号(4桁)">
+
+    <script>
+        const makeRoomButton = document.getElementById('make-room')
+        makeRoomButton.addEventListener('click', ()=>{
+            let url = "https://" + location.hostname + ":3000/multi"
+            window.location.href = url;
+        })
+    </script>
 </body>
 </html>
