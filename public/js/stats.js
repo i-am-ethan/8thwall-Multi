@@ -9,6 +9,7 @@ function animate() {
 	stats.begin();
 
 	// monitored code goes here
+    renderer.render(scene, camera);
 
 	stats.end();
 
