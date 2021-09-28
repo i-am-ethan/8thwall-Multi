@@ -5,6 +5,8 @@ const io = require('socket.io')(http);
 const PORT = process.env.PORT || 3000;
 
 
+app.use(express.static('public'));//ルートの静的ファイルへのアクセス許可
+
 
 http.listen(PORT, ()=>{
     console.log('server listening..... Port:' + PORT)
