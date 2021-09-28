@@ -1,3 +1,1 @@
-export default ()=>{
-    console.log("client.js reloaded")
-}
+console.log("client.js reloaded")
