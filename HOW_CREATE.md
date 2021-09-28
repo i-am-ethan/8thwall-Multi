@@ -42,6 +42,17 @@ rootにアクセスすると、index.htmlを返す。
 
 ### 8. socket.ioの実装
 
+### 9. jsとcssファイルの外だし
+```
+app.use(express.static('public'));
+//publicからのpathで各ファイルを読み込む
+```
+
+### 10. stats.jsでパフォーマンスをリアルタイムに計測する
+https://github.com/mrdoob/stats.js
+
+
+
 
 
 ...つづく
