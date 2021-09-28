@@ -1,3 +1,6 @@
+import Stats from 'stats.js'
+
+
 const debugConsole = document.getElementById("debug-console")
 
 var stats = new Stats();
