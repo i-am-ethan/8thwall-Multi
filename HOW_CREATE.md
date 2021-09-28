@@ -28,4 +28,20 @@ heroku apps:rename newname(heroku appの名前を変更したい場合)
 heroku open
 ```
 
+### 5. package.jsonにnpm startを追記
+herokuの特性として最初にnpm startを実行する癖がある。
+なので、npm startを追記する。
+
+
+### 6. server.jsを作成する
+rootにアクセスすると、index.htmlを返す。
+/xxxxにアクセスすると、multi.htmlを返す。
+
+### 7. multi.htmlを8thwallなコードに変更
+まずは、シンプルに"a-box"を出してみる
+
+### 8. socket.ioの実装
+
+
+
 ...つづく
