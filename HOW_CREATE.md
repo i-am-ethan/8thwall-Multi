@@ -48,9 +48,12 @@ app.use(express.static('public'));
 //publicからのpathで各ファイルを読み込む
 ```
 
-### 10. stats.jsでパフォーマンスをリアルタイムに計測する
+### 10. stats.js for aframeでパフォーマンスをリアルタイムに計測する
 https://github.com/mrdoob/stats.js
-
+```
+npm install stats.js
+```
+a-sceneにstatsを追加する
 
 
 
