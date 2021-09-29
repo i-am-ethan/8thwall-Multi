@@ -21,7 +21,8 @@
     <script>
         const makeRoomButton = document.getElementById('make-room')
         makeRoomButton.addEventListener('click', ()=>{
-            let url = "https://" + location.hostname + "/multi"
+            let url = "https://" + location.hostname + "/multi?room=" + Math.floor(Math.random() * 1000, 0)
+            console.log(url)
             window.location.href = url;
         })
     </script>
