@@ -26,12 +26,12 @@
 
     <a-scene
       stats
-      xrweb
       xrextras-gesture-detector
       xrextras-tap-recenter
       xrextras-almost-there
       xrextras-loading
-      xrextras-runtime-error>
+      xrextras-runtime-error
+      xrweb>
 
       <a-camera 
         position="0 8 8"
@@ -58,23 +58,30 @@
 
       <a-box
         class="cantap"
+        xrextras-hold-drag 
+        xrextras-two-finger-rotate 
         xrextras-pinch-scale
-        position="-1.7 0.5 -2"
-        rotation="0 45 0"
         scale="3 3 3"
         material="roughness: 0.8; metalness: 0.2; color: #00EDAF;"
         shadow>
       </a-box>
+
+      <a-plane
+        id="ground" 
+        rotation="-90 0 0" 
+        width="1000" 
+        height="1000" 
+        material="shader: shadow" 
+        shadow>
+      </a-plane>
+
+
     </a-scene>   
 
 
     <!-- js  -->
     <script src="./js/debug-console.js"></script>
     <script src="./js/client-side.js"></script>
-<!-- 
-    <script>
-        //  サーバー側とコネクションする
-        const socket = io()
-    </script> -->
+
 </body>
 </html>
