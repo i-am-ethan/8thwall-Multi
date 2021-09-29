@@ -1,12 +1,11 @@
-//debug-console
-const debugConsole = document.getElementById("debug-console")
-
-
 const express = require('express'); //expressモジュールの読み込み
 const app = express(); //expressアプリケーションの作成
 const http = require('http').Server(app); //httpモジュールの読み込み
 const io = require('socket.io')(http);
 const PORT = process.env.PORT || 3000;
+
+//debug-console
+const debugConsole = document.getElementById("debug-console")
 
 console.log("server.js was reloaded")
 
@@ -31,4 +30,5 @@ io.on('connection', (socket)=>{
     const debugConsole02 = document.createElement("p")
     debugConsole02.innerHTML = "server-id:" + socket.id;
     debugConsole.appendChild(debugConsole02)
+
 })
