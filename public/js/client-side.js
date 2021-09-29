@@ -10,8 +10,8 @@ console.log(clientSearchArray)
 clientSearchArray.shift() //先頭を削除
 console.log(clientSearchArray)
 
-let clientRoomId = clientSearchArray;
-console.log(clientRoomId)
+let clientRoomId = clientSearchArray[0];
+console.log("client-room-id:"+clientRoomId)
 //?room=8080
 
 
