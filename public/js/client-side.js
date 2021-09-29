@@ -1,6 +1,6 @@
 //debug-console取得
 const debugConsole = document.getElementById("debug-console")
-debugConsole.insertAdjacentHTML('beforeend', '<p>Paragraph</p>');
+debugConsole.innerHTML = "test"
 
 console.log("client.js reloaded")
 
