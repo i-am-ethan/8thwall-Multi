@@ -27,15 +27,17 @@
     <a-scene
       stats
       xrextras-gesture-detector
-      xrextras-tap-recenter
       xrextras-almost-there
       xrextras-loading
       xrextras-runtime-error
+      renderer="colorManagement: true"
       xrweb>
 
-      <a-camera 
+
+      <a-camera
+        id="camera"
         position="0 8 8"
-        raycaster="objects: .cantap;"
+        raycaster="objects: .cantap"
         cursor="fuse: false; rayOrigin: mouse;">
       </a-camera>
 
@@ -62,8 +64,7 @@
         xrextras-two-finger-rotate 
         xrextras-pinch-scale
         scale="3 3 3"
-        material="roughness: 0.8; metalness: 0.2; color: #00EDAF;"
-        shadow>
+        shadow="receive: false">
       </a-box>
 
       <a-plane
