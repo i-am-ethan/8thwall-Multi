@@ -27,13 +27,12 @@
             window.location.href = url;
         })
 
-        const inputRoomID = document.getElementById('input-room-id')
-        
-        const joinRoomButton = document.getElementById('join-room')
-        joinRoomButton.addEventListener("click", ()=>{
-            console.log(inputRoomID.value)
-        })
+        const inputRoomID = document.getElementById('input-room-id') // input要素取得
+        const joinRoomButton = document.getElementById('join-room') // input type button
 
+        joinRoomButton.addEventListener("click", ()=>{
+            let url = "https://" + location.hostname + "/multi?room=" + inputRoomID.value
+        })
     </script>
 </body>
 </html>
