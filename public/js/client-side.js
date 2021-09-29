@@ -2,13 +2,17 @@
 const debugConsole = document.getElementById("debug-console")
 
 
-// url取得
-const clientURL = location.href
-console.log(clientURL)
-const clientPathName = location.pathname
-console.log(clientPathName)
-const clientSearch = location.search
+// room-id取得
+let clientSearch = location.search
 console.log(clientSearch)
+clientSearchArray = clientSearch.split("=")
+console.log(clientSearchArray)
+clientSearchArray.shift() //先頭を削除
+console.log(clientSearchArray)
+
+let clientRoomId = clientSearchArray;
+console.log(clientRoomId)
+//?room=8080
 
 
 const socket = io.connect();
