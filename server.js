@@ -1,3 +1,7 @@
+//debug-console
+const debugConsole = document.getElementById("debug-console")
+
+
 const express = require('express'); //expressモジュールの読み込み
 const app = express(); //expressアプリケーションの作成
 const http = require('http').Server(app); //httpモジュールの読み込み
@@ -24,6 +28,7 @@ app.get('/multi', (req, res)=>{
 
 
 io.on('connection', (socket)=>{
-    console.log("connected")
-    console.log(socket.id)
+    const debugConsole02 = document.createElement("p")
+    debugConsole02.innerHTML = "server-id:" + socket.id;
+    debugConsole.appendChild(debugConsole02)
 })
