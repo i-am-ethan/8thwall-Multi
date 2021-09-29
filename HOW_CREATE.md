@@ -55,7 +55,7 @@ npm install stats.js
 ```
 a-sceneにstatsを追加する
 
-
+### 11. idを取得してdebug-consoleに出力する
 
 
 ...つづく
