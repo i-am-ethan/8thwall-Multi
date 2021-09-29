@@ -59,6 +59,15 @@ a-sceneにstatsを追加する
 
 ### 12. 部屋を作る処理の実装
 urlで分ける
+```
+const makeRoomButton = document.getElementById('make-room')
+makeRoomButton.addEventListener('click', ()=>{
+    let url = "https://" + location.hostname + "/multi?room=" + Math.floor(Math.random() * 10000, 0)//4桁の数字
+    console.log(url)
+    window.location.href = url;
+})
+```
 
+### 13. 部屋番号を入力したらhostと同じurlに接続する
 
 ...つづく
