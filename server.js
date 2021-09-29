@@ -5,7 +5,7 @@ const io = require('socket.io')(http);
 const PORT = process.env.PORT || 3000;
 
 //debug-console
-// const debugConsole = document.getElementById("debug-console")
+const serverDebugConsole = document.getElementById("debug-console")
 
 console.log("server.js was reloaded")
 
@@ -27,8 +27,8 @@ app.get('/multi', (req, res)=>{
 
 
 io.on('connection', (socket)=>{
-    // const debugConsole02 = document.createElement("p")
-    // debugConsole02.innerHTML = "server-id:" + socket.id;
-    // debugConsole.appendChild(debugConsole02)
+    const serverDebugConsole02 = document.createElement("p")
+    serverDebugConsole02.innerHTML = "server-id:" + socket.id;
+    serverDebugConsole.appendChild(serverDebugConsole02)
 
 })
