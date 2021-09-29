@@ -10,7 +10,6 @@ const socket = io.connect();
 
 socket.on("connect", () => {
     const debugConsole02 = document.createElement("p")
-    debugConsole02.innerHTML = socket.id
+    debugConsole02.innerHTML = "client-id:" + socket.id;
     debugConsole.appendChild(debugConsole02)
-    console.log(socket.id)
 })
