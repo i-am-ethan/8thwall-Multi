@@ -82,7 +82,7 @@ AFRAME.registerComponent('random-cube-generator', {
         let scene = this.el.sceneEl;
         
   
-        const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "punk", "orange"]
+        const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
         const random = Math.floor(Math.random()*7)
   
         const newCube = document.createElement("a-box")
