@@ -24,9 +24,9 @@ socket.on("connect", () => {
 })
 
 
-window.addEventListener('load', ()=>{
+window.addEventListener('load', ()=>{ //ロード時に同期したことを知らせる関数
 
-    let roomid = clientSearchArray[0];
+    let roomid = clientSearchArray[0]; //room-id取得
 
 
     console.log("loadしました");
@@ -37,6 +37,7 @@ window.addEventListener('load', ()=>{
         const debugConsole03 = document.createElement("p")
         debugConsole03.innerHTML = "room-id:" + roomid;
         debugConsole.appendChild(debugConsole03)
+        console.log(roomid)
     }
     setTimeout(debugConsole,3000)
 
