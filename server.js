@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 console.log("server.js was loaded")
 
 
-// app.use(express.static('public'));//ルートの静的ファイルへのアクセス許可
+app.use(express.static('public'));//ルートの静的ファイルへのアクセス許可
 
 
 http.listen(PORT, ()=>{
