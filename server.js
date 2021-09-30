@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 console.log("server.js was reloaded")
 
+
 app.use(express.static('public'));//ルートの静的ファイルへのアクセス許可
 
 

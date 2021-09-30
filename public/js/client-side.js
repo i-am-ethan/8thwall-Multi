@@ -14,7 +14,12 @@ const socket = io.connect();
 
 
 
+
+
 socket.on("connect", () => {
+
+    console.log(socket.connected) // true of false
+
     const debugConsole02 = document.createElement("p")
     debugConsole02.innerHTML = "client-id:" + socket.id;
     debugConsole.appendChild(debugConsole02)
@@ -22,6 +27,9 @@ socket.on("connect", () => {
     debugConsoleRoomId.innerHTML = "your room-id:"+ clientRoomId;
     debugConsole.appendChild(debugConsoleRoomId)
 })
+
+
+
 
 
 window.addEventListener('load', ()=>{ //ロード時に同期したことを知らせる関数
