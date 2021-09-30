@@ -29,4 +29,13 @@ app.get('/multi', (req, res)=>{
 
 io.on('connection', (socket)=>{
     console.log(socket.id) //server-side-id
+
+    let roomid;
+
+    // clientとserverが同期された時の処理
+    socket.on('client_to_server_join', (data)=>{
+        roomid = data;
+        socket.join(roomid);
+        io.to(roomid).emit('sync', data);
+    })
 })

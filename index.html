@@ -20,12 +20,17 @@
 
 
     <script>
+
+        // 部屋を作る処理
+
         const makeRoomButton = document.getElementById('make-room')
         makeRoomButton.addEventListener('click', ()=>{
             let url = "https://" + location.hostname + "/multi?room=" + Math.floor(Math.random() * 10000, 0)//4桁の数字
             console.log(url)
             window.location.href = url;
         })
+
+        // 部屋に参加する処理
 
         const inputRoomID = document.getElementById('input-room-id') // input要素取得
         const joinRoomButton = document.getElementById('join-room') // input type button
@@ -34,6 +39,7 @@
             let url = "https://" + location.hostname + "/multi?room=" + inputRoomID.value
             window.location.href = url;
         })
+        
     </script>
 </body>
 </html>

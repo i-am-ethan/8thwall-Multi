@@ -69,5 +69,19 @@ makeRoomButton.addEventListener('click', ()=>{
 ```
 
 ### 13. 部屋番号を入力したらhostと同じurlに接続する
+```
+const inputRoomID = document.getElementById('input-room-id') // input要素取得
+const joinRoomButton = document.getElementById('join-room') // input type button
+
+joinRoomButton.addEventListener("click", ()=>{
+    let url = "https://" + location.hostname + "/multi?room=" + inputRoomID.value
+    window.location.href = url;
+})
+```
+
+### 14. 同じ部屋に参加して同期したことを知らせる(端末2台必須)
+server.jsのsocket.on('connection)の中に記述していく
+
+
 
 ...つづく

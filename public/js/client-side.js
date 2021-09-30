@@ -22,3 +22,23 @@ socket.on("connect", () => {
     debugConsoleRoomId.innerHTML = "your room-id:"+ clientRoomId;
     debugConsole.appendChild(debugConsoleRoomId)
 })
+
+
+window.addEventListener('load', ()=>{
+
+    let roomid = clientSearchArray[0];
+
+
+    console.log("loadしました");
+
+    socket.emit('client_to_server_join', roomid)
+
+    const debugConsole = () => { // roomidをdebugConsoleに表示する関数
+        const debugConsole03 = document.createElement("p")
+        debugConsole03.innerHTML = "room-id:" + roomid;
+        debugConsole.appendChild(debugConsole03)
+    }
+    setTimeout(debugConsole,3000)
+
+
+})
