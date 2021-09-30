@@ -58,35 +58,18 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 
 // 8th-wall
 // ------------------------------------------------------------------------------------
-// const randomCubeComponent = {
-//     init() {
-//       let scene = this.el.sceneEl;
-      
-
-//       const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "punk", "orange"]
-//       const random = Math.floor(Math.random()*7)
-
-//       const newCube = document.createElement("a-box")
-//       newCube.setAttribute(`"style", "color; ${randomCubeColor[random]}; scale: 3 3 3;`)
-//       newCube.setAttribute("class", "cantap")
-//       newCube.setAttribute("xrextras-hold-drag", "")
-//       newCube.setAttribute("xrextras-two-finger-rotate", "")
-//       newCube.setAttribute("xrextras-pinch-scale", "")
-//     //   newCube.setAttribute("style", "color: randomCubeColor;")
-//     }
-// }
-// export {randomCubeComponent}
 
 AFRAME.registerComponent('random-cube-generator', {
     init() {
         let scene = this.el.sceneEl;
+        let data = this.data; 
         
   
         const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
         const random = Math.floor(Math.random()*7)
   
         const newCube = document.createElement("a-box")
-        // newCube.setAttribute("color", "red")
+      
         newCube.setAttribute("color", `${randomCubeColor[random]}`)
         newCube.setAttribute("scale", "3 3 3")
         newCube.setAttribute("class", "cantap")
@@ -95,6 +78,21 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-pinch-scale", "")
 
         scene.appendChild(newCube)
-      //   newCube.setAttribute("style", "color: randomCubeColor;")
+
+        sendGenarateBox(newCube)
+
+
+        function sendGenarateBox(newCube){
+            let socketdata = {}
+            let block = []
+            block.push({color: `${randomCubeColor[random]}`})
+            block.push({position: data.pos.x+" "+data.pos.y+" "+data.pos.z})
+            block.push({scale: "3 3 3"});
+            socketdata["block"] = block;
+            ws.emit("generate_box", JSON.stringify(socketdata));//Socket.ioサーバーへ送信
+
+        }
+
+      
       }
 }) 

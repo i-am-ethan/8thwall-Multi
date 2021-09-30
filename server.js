@@ -39,4 +39,17 @@ io.on('connection', (socket)=>{
         socket.join(roomid);
         io.to(roomid).emit('sync', data);
     })
+
+
+    socket.on('generate_box', function(data) {
+        //接続者全員にdataを送る(第一引数がイベント名、第二引数が送信する値)
+        io.to(roomid).emit('makeblock', data);//roomidが同じ部屋に対して、makeblockのdataを送信する
+      });
+
+
+
+
+
+
+
 })
