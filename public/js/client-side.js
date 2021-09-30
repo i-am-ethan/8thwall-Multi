@@ -33,13 +33,14 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 
     socket.emit('client_to_server_join', roomid)
 
-    const debugConsole = () => { // roomidをdebugConsoleに表示する関数
+
+    const displayDebugConsole = () => { // roomidをdebugConsoleに表示する関数
         const debugConsole03 = document.createElement("p")
         debugConsole03.innerHTML = "room-id:" + roomid;
         debugConsole.appendChild(debugConsole03)
         console.log(roomid)
     }
-    setTimeout(debugConsole,3000)
+    setTimeout(displayDebugConsole,3000)
 
 
 })
