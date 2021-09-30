@@ -22,9 +22,9 @@ app.get('/', (req, res)=>{
     res.sendFile(__dirname + '/index.html')
 })
 
-app.get('/multi', (req, res)=>{
-    res.sendFile(__dirname + '/multi.html')
-})
+// app.get('/multi', (req, res)=>{
+//     res.sendFile(__dirname + '/multi.html')
+// })
 
 
 
