@@ -7,10 +7,10 @@ const PORT = process.env.PORT || 3000;
 
 
 
-console.log("server.js was reloaded")
+console.log("server.js was loaded")
 
 
-app.use(express.static('public'));//ルートの静的ファイルへのアクセス許可
+// app.use(express.static('public'));//ルートの静的ファイルへのアクセス許可
 
 
 http.listen(PORT, ()=>{
@@ -28,15 +28,15 @@ app.get('/multi', (req, res)=>{
 
 
 
-io.on('connection', (socket)=>{
-    console.log(socket.id) //server-side-id
+// io.on('connection', (socket)=>{
+//     console.log(socket.id) //server-side-id
 
-    let roomid;
+//     let roomid;
 
-    // clientとserverが同期された時の処理
-    socket.on('client_to_server_join', (data)=>{
-        roomid = data;
-        socket.join(roomid);
-        io.to(roomid).emit('sync', data);
-    })
-})
+//     // clientとserverが同期された時の処理
+//     socket.on('client_to_server_join', (data)=>{
+//         roomid = data;
+//         socket.join(roomid);
+//         io.to(roomid).emit('sync', data);
+//     })
+// })
