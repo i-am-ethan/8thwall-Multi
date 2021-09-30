@@ -86,7 +86,7 @@ AFRAME.registerComponent('random-cube-generator', {
             let socketdata = {}
             let block = []
             block.push({color: `${randomCubeColor[random]}`})
-            block.push({position: data.pos.x+" "+data.pos.y+" "+data.pos.z})
+            block.push({position: data.pos.x + data.pos.y + data.pos.z})
             block.push({scale: "3 3 3"});
             socketdata["block"] = block;
             ws.emit("generate_box", JSON.stringify(socketdata));//Socket.ioサーバーへ送信
