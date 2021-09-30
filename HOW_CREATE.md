@@ -83,5 +83,7 @@ joinRoomButton.addEventListener("click", ()=>{
 server.jsのsocket.on('connection)の中に記述していく
 
 
+### 15. boxの位置情報同期する
+
 
 ...つづく
