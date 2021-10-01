@@ -43,7 +43,7 @@ io.on('connection', (socket)=>{
 
     socket.on('generate_box', function(data) {
         //接続者全員にdataを送る(第一引数がイベント名、第二引数が送信する値)
-        io.to(roomid).emit('makeblock', data);//roomidが同じ部屋に対して、makeblockのdataを送信する
+        io.to(roomid).emit('generate_box', data);//roomidが同じ部屋に対して、makeblockのdataを送信する
       });
 
 
