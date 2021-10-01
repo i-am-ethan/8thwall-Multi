@@ -61,14 +61,14 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 
 AFRAME.registerComponent('random-cube-generator', {
     init() {
-        const {object} = this.el;
+        // const {object} = this.el;
 
         let scene = this.el.sceneEl;
         let data = this.data; 
 
-        const createObject = ({detail}) => {
+        // const createObject = ({detail}) => {
 
-        }
+        // }
         
   
         const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
@@ -89,7 +89,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
         console.log("data:"+data)
         console.log("newCube:"+ newCube)
-        console.log("newCubePos:"+ newCube.position)
+        console.log("newCubePos:"+ newCube.object3D.position)
 
 
         function sendGenarateBox(newCube){
