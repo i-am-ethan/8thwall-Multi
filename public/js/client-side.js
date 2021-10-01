@@ -25,6 +25,18 @@ socket.on("connect", () => {
 })
 
 
+socket.on("generate_box", (data) => {
+    console.log("socket.on generate_box")
+    let cubeData = JSON.parse(data)
+    let cube = cubeData.cube;
+    // let newCube = document.createElement("a-box");
+    // newCube.setAttribute("color", cube[0].color)
+    // newCube.setAttribute("color", cube[1].color)
+    // newCube.setAttribute("color", cube[2].color)
+    console.log("cubeの配列"+JSON.stringify(cube))
+})
+
+
 
 
 
@@ -62,18 +74,11 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 AFRAME.registerComponent('random-cube-generator', {
     init() {
         
-        // const {object3D} = this.el
-        // const object3D = this.el.object3D
-
-
         var el = this.el; //elements取得
         var data = this.data; //data取得
 
         let scene = this.el.sceneEl;
-        // let data = this.data; 
 
-
-        
   
         const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
         const random = Math.floor(Math.random()*7)
@@ -91,21 +96,19 @@ AFRAME.registerComponent('random-cube-generator', {
         console.log(newCube.object3D.position)
 
         scene.appendChild(newCube)
-        // this.el.sceneEl.appendChild(newCube)
 
         sendGenarateBox(newCube)
 
-        // console.log("newCubePos.data:"+ newCube.data.position)
 
 
         function sendGenarateBox(newCube){
-            let socketdata = {}
-            let block = []
-            block.push({color: `${randomCubeColor[random]}`})
+            let socketdata = {} //socket-data objectを生成
+            let cube = [] //cube配列生成
+            cube.push({color: `${randomCubeColor[random]}`}) //cube配列に押し込んでいく
             // block.push({position: data.pos.x+" "+data.pos.y+" "+data.pos.z});
-            block.push({scale: "3 3 3"});
-            socketdata["block"] = block;
-            socket.emit("generate_box", JSON.stringify(socketdata));//Socket.ioサーバーへ送信
+            cube.push({scale: "3 3 3"});
+            socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
+            socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
 
         }
 

@@ -40,14 +40,12 @@ io.on('connection', (socket)=>{
         io.to(roomid).emit('sync', data);
     })
 
-
+    // clientからgenerate_boxが送信された時
     socket.on('generate_box', function(data) {
-        //接続者全員にdataを送る(第一引数がイベント名、第二引数が送信する値)
-        io.to(roomid).emit('generate_box', data);//roomidが同じ部屋に対して、makeblockのdataを送信する
+        //同じroomidの接続者全員にdataを送る(第一引数がイベント名、第二引数が送信する値)
+        io.to(roomid).emit('generate_box', data);
+        //⇨ その後、client側で受け取る必要がある。
       });
-
-
-
 
 
 
