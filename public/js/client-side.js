@@ -90,6 +90,7 @@ AFRAME.registerComponent('random-cube-generator', {
         console.log("data:"+data)
         console.log("newCube:"+ newCube)
         console.log("newCubePos:"+ newCube.object3D.position)
+        console.log("newCubePos:"+ newCube.object3D.position)
 
 
         function sendGenarateBox(newCube){
