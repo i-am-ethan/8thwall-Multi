@@ -88,10 +88,7 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-two-finger-rotate", "")
         newCube.setAttribute("xrextras-pinch-scale", "")
 
-        // console.log("data:"+data)
-        // console.log("newCube:"+ newCube)
-        // console.log("newCubePos:"+ newCube.object3D.position)
-        console.log("newCubePos:"+ newCube.object3D.position)
+        console.log(newCube.object3D.position)
 
         this.el.sceneEl.appendChild(newCube)
 
