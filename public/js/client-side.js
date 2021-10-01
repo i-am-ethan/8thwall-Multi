@@ -49,7 +49,6 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
     console.log("loadしました");
 
     socket.emit('client_to_server_join', roomid)
-    socket.emit('client_to_server_join', "同期しました!!!")
 
 
     const displayDebugConsole = () => { // roomidをdebugConsoleに表示する関数
@@ -86,21 +85,26 @@ AFRAME.registerComponent('random-cube-generator', {
         const random = Math.floor(Math.random()*7)
   
 
-        const newCube = document.createElement("a-box")
-        newCube.setAttribute("color", `${randomCubeColor[random]}`)
-        newCube.setAttribute("scale", "3 3 3")
-        newCube.object3D.position.set(3, 0, 0)
-        newCube.setAttribute("class", "cantap")
-        newCube.setAttribute("xrextras-hold-drag", "")
-        newCube.setAttribute("xrextras-two-finger-rotate", "")
-        newCube.setAttribute("xrextras-pinch-scale", "")
+        const makeCube = () => {
 
-        console.log(newCube.object3D.position)
+            
+            const newCube = document.createElement("a-box")
+            newCube.setAttribute("color", `${randomCubeColor[random]}`)
+            newCube.setAttribute("scale", "3 3 3")
+            newCube.object3D.position.set(3, 0, 0)
+            newCube.setAttribute("class", "cantap")
+            newCube.setAttribute("xrextras-hold-drag", "")
+            newCube.setAttribute("xrextras-two-finger-rotate", "")
+            newCube.setAttribute("xrextras-pinch-scale", "")
+            console.log(newCube.object3D.position)
+            scene.appendChild(newCube)
+            
+            sendGenarateBox(newCube)
 
-        scene.appendChild(newCube)
-
-        sendGenarateBox(newCube)
-
+            setTimeout(makeCube, 3000)
+            
+        }
+        makeCube()
 
 
         function sendGenarateBox(newCube){
