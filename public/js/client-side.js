@@ -29,11 +29,12 @@ socket.on("generate_box", (data) => {
     console.log("socket.on generate_box")
     let cubeData = JSON.parse(data)
     let cube = cubeData.cube;
-    // let newCube = document.createElement("a-box");
-    // newCube.setAttribute("color", cube[0].color)
-    // newCube.setAttribute("color", cube[1].color)
-    // newCube.setAttribute("color", cube[2].color)
+    let newCube = document.createElement("a-box");
+    newCube.setAttribute("color", cube[0].color)
+    newCube.setAttribute("color", cube[1].position)
+    newCube.setAttribute("color", cube[2].scale)
     console.log("cubeの配列"+JSON.stringify(cube))
+    //cubeの配列[{"color":"green"},{"position":"3 0 0"},{"scale":"3 3 3"}]
 })
 
 
@@ -106,7 +107,6 @@ AFRAME.registerComponent('random-cube-generator', {
             let cube = [] //cube配列生成
             cube.push({color: `${randomCubeColor[random]}`}) //cube配列に押し込んでいく
             cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
-            // block.push({position: data.pos.x+" "+data.pos.y+" "+data.pos.z});
             cube.push({scale: "3 3 3"});
             socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
             socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
