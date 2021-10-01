@@ -61,7 +61,7 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 
 AFRAME.registerComponent('random-cube-generator', {
     init() {
-        // const {object} = this.el;
+        const {object3D} = this.el
 
         let scene = this.el.sceneEl;
         let data = this.data; 
