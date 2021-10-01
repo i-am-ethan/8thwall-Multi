@@ -84,13 +84,12 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-hold-drag", "")
         newCube.setAttribute("xrextras-two-finger-rotate", "")
         newCube.setAttribute("xrextras-pinch-scale", "")
-        newCube.setAttribute("random-cube-generator", "")
 
         console.log("data:"+data)
         console.log("newCube:"+ newCube)
         console.log("newCubePos:"+ newCube.object3D.position)
         console.log("newCubePos:"+ newCube.object3D.position)
-        
+
         scene.appendChild(newCube)
 
         sendGenarateBox(newCube)
