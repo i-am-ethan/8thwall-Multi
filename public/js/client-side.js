@@ -56,12 +56,13 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 // ------------------------------------------------------------------------------------
 
 
-const object3D = this.el
 
 
 
 AFRAME.registerComponent('random-cube-generator', {
     init() {
+        
+        const {object3D} = this.el
 
         var el = this.el; //elements取得
         var data = this.data; //data取得
@@ -75,20 +76,20 @@ AFRAME.registerComponent('random-cube-generator', {
         const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
         const random = Math.floor(Math.random()*7)
   
+
         const newCube = document.createElement("a-box")
-      
         newCube.setAttribute("color", `${randomCubeColor[random]}`)
         newCube.setAttribute("scale", "3 3 3")
         newCube.object3D.position.set(3, 0, 0)
         // newCube.setAttribute("position", "0 0 0")
-        newCube.setAttribute("class", "cantap")
-        newCube.setAttribute("xrextras-hold-drag", "")
-        newCube.setAttribute("xrextras-two-finger-rotate", "")
-        newCube.setAttribute("xrextras-pinch-scale", "")
+        // newCube.setAttribute("class", "cantap")
+        // newCube.setAttribute("xrextras-hold-drag", "")
+        // newCube.setAttribute("xrextras-two-finger-rotate", "")
+        // newCube.setAttribute("xrextras-pinch-scale", "")
 
-        console.log("data:"+data)
-        console.log("newCube:"+ newCube)
-        console.log("newCubePos:"+ newCube.object3D.position)
+        // console.log("data:"+data)
+        // console.log("newCube:"+ newCube)
+        // console.log("newCubePos:"+ newCube.object3D.position)
         console.log("newCubePos:"+ newCube.object3D.position)
 
         scene.appendChild(newCube)
@@ -112,3 +113,7 @@ AFRAME.registerComponent('random-cube-generator', {
       
       }
 }) 
+
+
+
+
