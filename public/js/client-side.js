@@ -63,13 +63,13 @@ AFRAME.registerComponent('random-cube-generator', {
     init() {
         
         // const {object3D} = this.el
-        const object3D = this.el.object3D
+        // const object3D = this.el.object3D
 
 
         var el = this.el; //elements取得
         var data = this.data; //data取得
 
-        let scene = this.el.sceneEl;
+        // let scene = this.el.sceneEl;
         // let data = this.data; 
 
 
@@ -93,7 +93,7 @@ AFRAME.registerComponent('random-cube-generator', {
         // console.log("newCubePos:"+ newCube.object3D.position)
         console.log("newCubePos:"+ newCube.object3D.position)
 
-        scene.appendChild(newCube)
+        this.el.sceneEl.appendChild(newCube)
 
         sendGenarateBox(newCube)
 
