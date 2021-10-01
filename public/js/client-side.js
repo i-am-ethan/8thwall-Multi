@@ -66,9 +66,7 @@ AFRAME.registerComponent('random-cube-generator', {
         let scene = this.el.sceneEl;
         let data = this.data; 
 
-        // const createObject = ({detail}) => {
 
-        // }
         
   
         const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
@@ -78,6 +76,7 @@ AFRAME.registerComponent('random-cube-generator', {
       
         newCube.setAttribute("color", `${randomCubeColor[random]}`)
         newCube.setAttribute("scale", "3 3 3")
+        newCube.setAttribute("position", "0 0 0")
         newCube.setAttribute("class", "cantap")
         newCube.setAttribute("xrextras-hold-drag", "")
         newCube.setAttribute("xrextras-two-finger-rotate", "")
