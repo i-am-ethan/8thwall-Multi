@@ -60,9 +60,11 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 
 
 AFRAME.registerComponent('random-cube-generator', {
-    init() {
+    init: function() {
         
-        const {object3D} = this.el
+        // const {object3D} = this.el
+        const object3D = this.el.object3D
+
 
         var el = this.el; //elements取得
         var data = this.data; //data取得
@@ -81,11 +83,10 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("color", `${randomCubeColor[random]}`)
         newCube.setAttribute("scale", "3 3 3")
         newCube.object3D.position.set(3, 0, 0)
-        // newCube.setAttribute("position", "0 0 0")
-        // newCube.setAttribute("class", "cantap")
-        // newCube.setAttribute("xrextras-hold-drag", "")
-        // newCube.setAttribute("xrextras-two-finger-rotate", "")
-        // newCube.setAttribute("xrextras-pinch-scale", "")
+        newCube.setAttribute("class", "cantap")
+        newCube.setAttribute("xrextras-hold-drag", "")
+        newCube.setAttribute("xrextras-two-finger-rotate", "")
+        newCube.setAttribute("xrextras-pinch-scale", "")
 
         // console.log("data:"+data)
         // console.log("newCube:"+ newCube)
