@@ -79,7 +79,7 @@ AFRAME.registerComponent('random-cube-generator', {
       
         newCube.setAttribute("color", `${randomCubeColor[random]}`)
         newCube.setAttribute("scale", "3 3 3")
-        newCube.object3D.position.set(0, 0, 0)
+        newCube.object3D.position.set(3, 0, 0)
         // newCube.setAttribute("position", "0 0 0")
         newCube.setAttribute("class", "cantap")
         newCube.setAttribute("xrextras-hold-drag", "")
