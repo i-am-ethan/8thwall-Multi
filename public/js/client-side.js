@@ -9,11 +9,7 @@ clientSearchArray.shift() //先頭を削除
 let clientRoomId = clientSearchArray[0]; // room-idだけ取得
 
 
-
 const socket = io.connect();
-
-
-
 
 
 socket.on("connect", () => {
@@ -59,10 +55,14 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 // 8th-wall
 // ------------------------------------------------------------------------------------
 
+
+const {object3D} = this.el
+
+
+
 AFRAME.registerComponent('random-cube-generator', {
     init() {
 
-        const {object3D} = this.el
         var el = this.el; //elements取得
         var data = this.data; //data取得
 
