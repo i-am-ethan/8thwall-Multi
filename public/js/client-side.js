@@ -61,10 +61,13 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 
 AFRAME.registerComponent('random-cube-generator', {
     init() {
+
         const {object3D} = this.el
+        var el = this.el; //elements取得
+        var data = this.data; //data取得
 
         let scene = this.el.sceneEl;
-        let data = this.data; 
+        // let data = this.data; 
 
 
         
@@ -81,6 +84,7 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-hold-drag", "")
         newCube.setAttribute("xrextras-two-finger-rotate", "")
         newCube.setAttribute("xrextras-pinch-scale", "")
+        newCube.setAttribute("random-cube-generator", "")
 
         scene.appendChild(newCube)
 
@@ -90,6 +94,7 @@ AFRAME.registerComponent('random-cube-generator', {
         console.log("newCube:"+ newCube)
         console.log("newCubePos:"+ newCube.object3D.position)
         console.log("newCubePos:"+ newCube.object3D.position)
+        console.log("newCubePos.data:"+ newCube.data.position)
 
 
         function sendGenarateBox(newCube){
