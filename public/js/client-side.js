@@ -49,6 +49,7 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
     console.log("loadしました");
 
     socket.emit('client_to_server_join', roomid)
+    socket.emit('client_to_server_join', "同期しました!!!")
 
 
     const displayDebugConsole = () => { // roomidをdebugConsoleに表示する関数
