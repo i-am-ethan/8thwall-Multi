@@ -86,15 +86,16 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-pinch-scale", "")
         newCube.setAttribute("random-cube-generator", "")
 
-        scene.appendChild(newCube)
-
-        sendGenarateBox(newCube)
-
         console.log("data:"+data)
         console.log("newCube:"+ newCube)
         console.log("newCubePos:"+ newCube.object3D.position)
         console.log("newCubePos:"+ newCube.object3D.position)
-        console.log("newCubePos.data:"+ newCube.data.position)
+        
+        scene.appendChild(newCube)
+
+        sendGenarateBox(newCube)
+
+        // console.log("newCubePos.data:"+ newCube.data.position)
 
 
         function sendGenarateBox(newCube){
