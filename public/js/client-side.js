@@ -108,7 +108,7 @@ AFRAME.registerComponent('random-cube-generator', {
             
             sendGenarateBox(newCube)
 
-            setTimeout(makeCube, 5000)
+            setTimeout(makeCube, 10000)
             
         }
         makeCube()
