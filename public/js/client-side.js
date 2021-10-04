@@ -91,7 +91,7 @@ AFRAME.registerComponent('random-cube-generator', {
             
             const newCube = document.createElement("a-box")
             newCube.setAttribute("color", `${randomCubeColor[random]}`)
-            newCube.setAttribute("scale", "3 3 3")
+            newCube.setAttribute("scale", "1 1 1")
             // newCube.object3D.position.set(3, 0, 0)
             newCube.setAttribute('position', camera.object3D.position)
             newCube.setAttribute("class", "cantap")
