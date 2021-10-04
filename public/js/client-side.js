@@ -61,13 +61,13 @@ AFRAME.registerComponent('random-cube-generator', {
         
         let scene = this.el.sceneEl;
 
-        const ground = document.getElementById('ground')
+        // const ground = document.getElementById('ground')
 
 
   
         const randomCubeColor = ["#ff3300", "#33ccff", "#00ff00", "#ffff00", "#000000", "#ffffff", "#ff0099", "#ff6600"]
 
-        ground.addEventListener('click', (event)=> {
+        // ground.addEventListener('click', (event)=> {
 
             let random = Math.floor(Math.random()*7)
 
@@ -95,7 +95,7 @@ AFRAME.registerComponent('random-cube-generator', {
             //     socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
             //     socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
             // }
-        })
+        // })
   
 
 
