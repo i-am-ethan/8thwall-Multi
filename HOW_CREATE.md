@@ -86,4 +86,15 @@ server.jsのsocket.on('connection)の中に記述していく
 ### 15. boxの位置情報同期する
 
 
+### 16. tick関数を扱う(ここから新しいブランチ)
+```
+init(){
+
+},
+tick(){
+    console.log("tickがお呼ばれしました。)
+}
+```
+
+
 ...つづく
