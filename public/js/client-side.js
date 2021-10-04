@@ -86,24 +86,17 @@ AFRAME.registerComponent('random-cube-generator', {
 
   
         const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
-        const random = Math.floor(Math.random()*7)
-
-
-        // const makeCube = () => {
-            
-
-        // }
-
-        // makeCube()
 
         ground.addEventListener('click', (event)=> {
+
+            let random = Math.floor(Math.random()*7)
+
             const touchPoint = event.detail.intersection.point
 
 
             const newCube = document.createElement("a-box")
             newCube.setAttribute("color", `${randomCubeColor[random]}`)
             newCube.setAttribute("scale", "1 1 1")
-            // newCube.object3D.position.set(3, 0, 0)
             newCube.setAttribute('position', touchPoint)
             newCube.setAttribute("class", "cantap")
             // newCube.setAttribute("xrextras-hold-drag", "")
