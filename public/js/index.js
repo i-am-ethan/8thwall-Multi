@@ -249,6 +249,16 @@
     //       })
     //     },
   
+
+
+
+
+
+
+
+
+
+    
     //     // main loop
     //     tick: function (time, timeDelta) {
     //       if (this.data.camerastatus == "hasVideo") {

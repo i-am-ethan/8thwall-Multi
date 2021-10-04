@@ -83,6 +83,15 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("xrextras-two-finger-rotate", "")
             newCube.setAttribute("xrextras-pinch-scale", "")
             scene.appendChild(newCube)
+
+
+            const hogehoge = () => {
+                console.log(newCube.object3D.position)
+                setTimeout(hogehoge, 3000)
+            }
+            hogehoge()
+
+
             // sendGenarateBox(newCube)
 
             
