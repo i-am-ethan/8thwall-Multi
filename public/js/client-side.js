@@ -117,7 +117,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
         scene.addEventListener('touchstart', ()=>{
-            // console.log(camera.object3D.position)
+            console.log(camera.object3D.position)
             makeCube()
         })
   
