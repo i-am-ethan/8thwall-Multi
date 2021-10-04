@@ -87,7 +87,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
             const hogehoge = () => {
                 console.log(newCube.object3D.position)
-                setTimeout(hogehoge, 3000)
+                setTimeout(hogehoge, 300)
             }
             hogehoge()
 
