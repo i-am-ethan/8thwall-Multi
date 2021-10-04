@@ -123,8 +123,8 @@ AFRAME.registerComponent('random-cube-generator', {
             let cube = cubeData.cube;
             let newCube = document.createElement("a-box");
             newCube.setAttribute("color", cube[0].color)
-            newCube.setAttribute("color", cube[1].position)
-            newCube.setAttribute("color", cube[2].scale)
+            newCube.setAttribute("position", cube[1].position)
+            newCube.setAttribute("scale", cube[2].scale)
             scene.appendChild(newCube)
             console.log("cubeの配列"+JSON.stringify(cube))
             //cubeの配列[{"color":"green"},{"position":"3 0 0"},{"scale":"3 3 3"}]
