@@ -93,31 +93,31 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("color", `${randomCubeColor[random]}`)
             newCube.setAttribute("scale", "1 1 1")
             // newCube.object3D.position.set(3, 0, 0)
-            newCube.setAttribute('position', camera.object3D.position)
+            newCube.setAttribute('position', `${camera.object3D.position.x} 0 ${camera.object3D.position.z} `)
             newCube.setAttribute("class", "cantap")
             // newCube.setAttribute("xrextras-hold-drag", "")
             // newCube.setAttribute("xrextras-two-finger-rotate", "")
             // newCube.setAttribute("xrextras-pinch-scale", "")
-            console.log(newCube.object3D.position)
+            // console.log(newCube.object3D.position)
             scene.appendChild(newCube)
             
             sendGenarateBox(newCube)
 
             // animation
-            newCube.setAttribute('animation__scale', {
-                property: 'scale',
-                from: '1 1 1',
-                to: '3 0.1 3',
-                dur: 500,
-                easing: 'easeOutQuad',
-            })
+            // newCube.setAttribute('animation__scale', {
+            //     property: 'scale',
+            //     from: '1 1 1',
+            //     to: '3 0.1 3',
+            //     dur: 500,
+            //     easing: 'easeOutQuad',
+            // })
 
             
         }
 
 
         scene.addEventListener('touchstart', ()=>{
-            console.log(camera.object3D.position)
+            // console.log(camera.object3D.position)
             makeCube()
         })
   
