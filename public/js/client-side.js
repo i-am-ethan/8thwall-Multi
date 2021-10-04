@@ -71,7 +71,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
             let random = Math.floor(Math.random()*7)
 
-            const touchPoint = event.detail.intersection.point
+            // const touchPoint = event.detail.intersection.point
 
 
             const newCube = document.createElement("a-box")
