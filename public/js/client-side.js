@@ -95,9 +95,9 @@ AFRAME.registerComponent('random-cube-generator', {
             // newCube.object3D.position.set(3, 0, 0)
             newCube.setAttribute('position', camera.object3D.position)
             newCube.setAttribute("class", "cantap")
-            newCube.setAttribute("xrextras-hold-drag", "")
-            newCube.setAttribute("xrextras-two-finger-rotate", "")
-            newCube.setAttribute("xrextras-pinch-scale", "")
+            // newCube.setAttribute("xrextras-hold-drag", "")
+            // newCube.setAttribute("xrextras-two-finger-rotate", "")
+            // newCube.setAttribute("xrextras-pinch-scale", "")
             console.log(newCube.object3D.position)
             scene.appendChild(newCube)
             
