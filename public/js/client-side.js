@@ -29,6 +29,7 @@ socket.on("generate_box", (data) => {
     console.log(JSON.parse(data)) 
     console.log("socket.on generate_box")
     let cubeData = JSON.parse(data)
+    console.log(cubeData)
     let cube = cubeData.cube;
     let newCube = document.createElement("a-box");
     newCube.setAttribute("color", cube[0].color)
