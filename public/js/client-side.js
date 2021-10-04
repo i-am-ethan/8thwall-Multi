@@ -103,7 +103,15 @@ AFRAME.registerComponent('random-cube-generator', {
             
             sendGenarateBox(newCube)
 
-            // setTimeout(makeCube, 10000)
+            // animation
+            newCube.setAttribute('animation__scale', {
+                property: 'scale',
+                from: '1 1 1',
+                to: '3 0.1 3',
+                dur: 500,
+                easing: 'easeOutQuad',
+            })
+
             
         }
 
