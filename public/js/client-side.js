@@ -1,3 +1,8 @@
+// global 
+const scene = this.el.sceneEl;
+
+
+
 // debug-console取得
 const debugConsole = document.getElementById("debug-console")
 
@@ -26,7 +31,6 @@ socket.on("connect", () => {
 
 
 socket.on("generate_box", (data) => {
-    console.log(JSON.parse(data)) 
     console.log("socket.on generate_box")
     let cubeData = JSON.parse(data)
     console.log(cubeData)
@@ -35,6 +39,7 @@ socket.on("generate_box", (data) => {
     newCube.setAttribute("color", cube[0].color)
     newCube.setAttribute("color", cube[1].position)
     newCube.setAttribute("color", cube[2].scale)
+    scene.appendChild(newCube)
     console.log("cubeの配列"+JSON.stringify(cube))
     //cubeの配列[{"color":"green"},{"position":"3 0 0"},{"scale":"3 3 3"}]
 })
