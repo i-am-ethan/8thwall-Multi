@@ -26,7 +26,7 @@ socket.on("connect", () => {
 
 
 socket.on("generate_box", (data) => {
-    console.log(data)
+    console.log(JSON.parse(data)) 
     console.log("socket.on generate_box")
     let cubeData = JSON.parse(data)
     let cube = cubeData.cube;
