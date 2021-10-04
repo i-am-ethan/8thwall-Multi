@@ -87,9 +87,11 @@ AFRAME.registerComponent('random-cube-generator', {
 
             const hogehoge = () => {
                 console.log(newCube.object3D.position)
-                setTimeout(hogehoge, 300)
+                setTimeout(hogehoge, 3000)
             }
             hogehoge()
+
+            // this.hoge = "hogehoge initだよ"
 
 
             // sendGenarateBox(newCube)
@@ -125,8 +127,11 @@ AFRAME.registerComponent('random-cube-generator', {
       },
 
 
+      // 1秒間に60-120回
       tick(){
           console.log("tickがお呼ばれされています。")
+          console.log(newCube.object3D.position)
+        //   const hogehogeComponent = document.querySelector('[random-cube-generator]').components.random-cube-generator;
       }
     
     
