@@ -87,18 +87,13 @@ AFRAME.registerComponent('random-cube-generator', {
         const random = Math.floor(Math.random()*7)
 
 
-        scene.addEventListener('touchstart', ()=>{
-            console.log(camera.object3D.position)
-        })
-  
-
-
         const makeCube = () => {
             
             const newCube = document.createElement("a-box")
             newCube.setAttribute("color", `${randomCubeColor[random]}`)
             newCube.setAttribute("scale", "3 3 3")
-            newCube.object3D.position.set(3, 0, 0)
+            // newCube.object3D.position.set(3, 0, 0)
+            newCube.setAttribute('position', camera.object3D.position)
             newCube.setAttribute("class", "cantap")
             newCube.setAttribute("xrextras-hold-drag", "")
             newCube.setAttribute("xrextras-two-finger-rotate", "")
@@ -108,10 +103,16 @@ AFRAME.registerComponent('random-cube-generator', {
             
             sendGenarateBox(newCube)
 
-            setTimeout(makeCube, 10000)
+            // setTimeout(makeCube, 10000)
             
         }
-        makeCube()
+
+
+        scene.addEventListener('touchstart', ()=>{
+            console.log(camera.object3D.position)
+            makeCube()
+        })
+  
 
 
         function sendGenarateBox(newCube){
