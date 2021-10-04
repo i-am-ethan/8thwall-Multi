@@ -80,13 +80,20 @@ AFRAME.registerComponent('random-cube-generator', {
 
         let scene = this.el.sceneEl;
 
+        const camera = document.getElementById('camera')
+
   
         const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
         const random = Math.floor(Math.random()*7)
+
+
+        scene.addEventListener('touchstart', ()=>{
+            console.log(camera.object3D.position)
+        })
   
 
-        const makeCube = () => {
 
+        const makeCube = () => {
             
             const newCube = document.createElement("a-box")
             newCube.setAttribute("color", `${randomCubeColor[random]}`)
