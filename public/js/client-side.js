@@ -1,8 +1,3 @@
-// global 
-const scene = this.el.sceneEl;
-
-
-
 // debug-console取得
 const debugConsole = document.getElementById("debug-console")
 
