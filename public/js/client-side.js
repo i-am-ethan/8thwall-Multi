@@ -25,19 +25,19 @@ socket.on("connect", () => {
 })
 
 
-socket.on("generate_box", (data) => {
-    console.log("socket.on generate_box")
-    let cubeData = JSON.parse(data)
-    console.log(cubeData)
-    let cube = cubeData.cube;
-    let newCube = document.createElement("a-box");
-    newCube.setAttribute("color", cube[0].color)
-    newCube.setAttribute("color", cube[1].position)
-    newCube.setAttribute("color", cube[2].scale)
-    scene.appendChild(newCube)
-    console.log("cubeの配列"+JSON.stringify(cube))
-    //cubeの配列[{"color":"green"},{"position":"3 0 0"},{"scale":"3 3 3"}]
-})
+// socket.on("generate_box", (data) => {
+//     console.log("socket.on generate_box")
+//     let cubeData = JSON.parse(data)
+//     console.log(cubeData)
+//     let cube = cubeData.cube;
+//     let newCube = document.createElement("a-box");
+//     newCube.setAttribute("color", cube[0].color)
+//     newCube.setAttribute("color", cube[1].position)
+//     newCube.setAttribute("color", cube[2].scale)
+//     scene.appendChild(newCube)
+//     console.log("cubeの配列"+JSON.stringify(cube))
+//     //cubeの配列[{"color":"green"},{"position":"3 0 0"},{"scale":"3 3 3"}]
+// })
 
 
 
@@ -112,6 +112,25 @@ AFRAME.registerComponent('random-cube-generator', {
             }
         })
   
+
+
+        socket.on("generate_box", (data) => {
+            console.log("socket.on generate_box")
+            let cubeData = JSON.parse(data)
+            console.log(cubeData)
+            let cube = cubeData.cube;
+            let newCube = document.createElement("a-box");
+            newCube.setAttribute("color", cube[0].color)
+            newCube.setAttribute("color", cube[1].position)
+            newCube.setAttribute("color", cube[2].scale)
+            scene.appendChild(newCube)
+            console.log("cubeの配列"+JSON.stringify(cube))
+            //cubeの配列[{"color":"green"},{"position":"3 0 0"},{"scale":"3 3 3"}]
+        })
+
+
+
+
 
 
 
