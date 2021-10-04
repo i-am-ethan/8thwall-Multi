@@ -26,6 +26,7 @@ socket.on("connect", () => {
 
 
 socket.on("generate_box", (data) => {
+    console.log(data)
     console.log("socket.on generate_box")
     let cubeData = JSON.parse(data)
     let cube = cubeData.cube;
@@ -75,12 +76,8 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 AFRAME.registerComponent('random-cube-generator', {
     init() {
         
-        var el = this.el; //elements取得
-        var data = this.data; //data取得
-
         let scene = this.el.sceneEl;
 
-        const camera = document.getElementById('camera')
         const ground = document.getElementById('ground')
 
 
@@ -99,10 +96,6 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("scale", "1 1 1")
             newCube.setAttribute('position', touchPoint)
             newCube.setAttribute("class", "cantap")
-            // newCube.setAttribute("xrextras-hold-drag", "")
-            // newCube.setAttribute("xrextras-two-finger-rotate", "")
-            // newCube.setAttribute("xrextras-pinch-scale", "")
-            // console.log(newCube.object3D.position)
             scene.appendChild(newCube)
             sendGenarateBox(newCube)
 
