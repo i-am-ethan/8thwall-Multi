@@ -79,9 +79,9 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("scale", "1 1 1")
             newCube.setAttribute('position', "0 0 0")
             newCube.setAttribute("class", "cantap")
-            newCube.setAttribute("class", "xrextras-hold-drag")
-            newCube.setAttribute("class", "xrextras-two-finger-rotate")
-            newCube.setAttribute("class", "xrextras-pinch-scale")
+            newCube.setAttribute("xrextras-hold-drag", "")
+            newCube.setAttribute("xrextras-two-finger-rotate", "")
+            newCube.setAttribute("xrextras-pinch-scale", "")
             scene.appendChild(newCube)
             // sendGenarateBox(newCube)
 
