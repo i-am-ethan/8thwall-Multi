@@ -83,7 +83,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
   
-        const randomCubeColor = ["red", "blue", "green", "yellow", "black", "white", "pink", "orange"]
+        const randomCubeColor = ["#ff3300", "#33ccff", "#00ff00", "#ffff00", "#000000", "#ffffff", "#ff0099", "#ff6600"]
 
         ground.addEventListener('click', (event)=> {
 
@@ -114,7 +114,7 @@ AFRAME.registerComponent('random-cube-generator', {
   
 
 
-        socket.on("generate_box", (data) => {
+        socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
             console.log("socket.on generate_box")
             let cubeData = JSON.parse(data)
             console.log(cubeData)
