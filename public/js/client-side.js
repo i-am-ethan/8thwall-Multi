@@ -83,18 +83,18 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("class", "xrextras-two-finger-rotate")
             newCube.setAttribute("class", "xrextras-pinch-scale")
             scene.appendChild(newCube)
-            sendGenarateBox(newCube)
+            // sendGenarateBox(newCube)
 
             
-            function sendGenarateBox(newCube){
-                let socketdata = {} //socket-data objectを生成
-                let cube = [] //cube配列生成
-                cube.push({color: `${randomCubeColor[random]}`}) //cube配列に押し込んでいく
-                cube.push({position: touchPoint.x +" "+touchPoint.y+" "+touchPoint.z}) //cube配列に押し込んでいく
-                cube.push({scale: "1 1 1"});
-                socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
-                socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
-            }
+            // function sendGenarateBox(newCube){
+            //     let socketdata = {} //socket-data objectを生成
+            //     let cube = [] //cube配列生成
+            //     cube.push({color: `${randomCubeColor[random]}`}) //cube配列に押し込んでいく
+            //     cube.push({position: touchPoint.x +" "+touchPoint.y+" "+touchPoint.z}) //cube配列に押し込んでいく
+            //     cube.push({scale: "1 1 1"});
+            //     socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
+            //     socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
+            // }
         })
   
 
