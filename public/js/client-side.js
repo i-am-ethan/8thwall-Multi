@@ -87,30 +87,38 @@ AFRAME.registerComponent('random-cube-generator', {
 
             const hogehoge = () => {
                 console.log(newCube.object3D.position)
-                setTimeout(hogehoge, 300)
+                sendGenarateBox(newCube) //500msに1回サーバーに送信する
+                setTimeout(hogehoge, 500)
             }
             hogehoge()
 
             // this.hoge = "hogehoge initだよ"
 
 
-            // sendGenarateBox(newCube)
 
             
-            // function sendGenarateBox(newCube){
-            //     let socketdata = {} //socket-data objectを生成
-            //     let cube = [] //cube配列生成
-            //     cube.push({color: `${randomCubeColor[random]}`}) //cube配列に押し込んでいく
-            //     cube.push({position: touchPoint.x +" "+touchPoint.y+" "+touchPoint.z}) //cube配列に押し込んでいく
-            //     cube.push({scale: "1 1 1"});
-            //     socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
-            //     socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
-            // }
+            function sendGenarateBox(newCube){
+                let socketdata = {} //socket-data objectを生成
+                let cube = [] //cube配列生成
+                cube.push({color: `${randomCubeColor[random]}`}) //cube配列に押し込んでいく
+                cube.push({position: touchPoint.x +" "+touchPoint.y+" "+touchPoint.z}) //cube配列に押し込んでいく
+                cube.push({scale: "1 1 1"});
+                socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
+                socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
+            }
         // })
   
 
+        let initialData;
 
         socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
+            // フラグを設定(true:get-attribute / false:create-element)
+            console.log("initialData:"+initialData)
+            if(!initialData){
+                console.log("initialData:false")
+            }
+        
+
             console.log("socket.on generate_box")
             let cubeData = JSON.parse(data)
             console.log(cubeData)
@@ -121,6 +129,8 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("scale", cube[2].scale)
             scene.appendChild(newCube)
             console.log("cubeの配列"+JSON.stringify(cube))
+
+            initialData = false
         })
 
       
