@@ -130,7 +130,7 @@ AFRAME.registerComponent('random-cube-generator', {
       // 1秒間に60-120回
       tick(){
           console.log("tickがお呼ばれされています。")
-          console.log(newCube.object3D.position)
+        //   console.log(newCube.object3D.position)
         //   const hogehogeComponent = document.querySelector('[random-cube-generator]').components.random-cube-generator;
       }
     
@@ -147,6 +147,7 @@ AFRAME.registerComponent('foo', {
     },
   
     qux: function () {
-      // ...
+        var fooComponent = document.querySelector('[foo]').components.foo;
+        console.log(fooComponent.bar);
     }
   });
