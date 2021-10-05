@@ -87,7 +87,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
             const hogehoge = () => {
                 console.log(newCube.object3D.position)
-                setTimeout(hogehoge, 3000)
+                setTimeout(hogehoge, 300)
             }
             hogehoge()
 
@@ -128,11 +128,11 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
       // 1秒間に60-120回
-      tick(){
-          console.log("tickがお呼ばれされています。")
-        //   console.log(newCube.object3D.position)
-        //   const hogehogeComponent = document.querySelector('[random-cube-generator]').components.random-cube-generator;
-      }
+    //   tick(){
+    //       console.log("tickがお呼ばれされています。")
+    //     //   console.log(newCube.object3D.position)
+    //     //   const hogehogeComponent = document.querySelector('[random-cube-generator]').components.random-cube-generator;
+    //   }
     
     
 }) 
@@ -140,15 +140,15 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
 
-AFRAME.registerComponent('foo', {
-    init: function () {
-      this.bar = 'baz';
-      console.log("fooを読み込みました")
-    },
+// AFRAME.registerComponent('foo', {
+//     init: function () {
+//       this.bar = 'baz';
+//       console.log("read foo")
+//     },
   
-    qux: function () {
-        var fooComponent = document.querySelector('[foo]').components.foo;
-        console.log(fooComponent.bar);
-        fooComponent.qux();
-    }
-  });
+//     qux: function () {
+//         var fooComponent = document.querySelector('[foo]').components.foo;
+//         console.log(fooComponent.bar);
+//         fooComponent.qux();
+//     }
+//   });
