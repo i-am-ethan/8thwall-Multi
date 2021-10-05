@@ -44,7 +44,7 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 
     console.log("loadしました");
 
-    socket.emit('join_room', roomid)
+    socket.emit('join_room', roomid) // room-idを送信する
 
 
     const displayDebugConsole = () => { // roomidをdebugConsoleに表示する関数
