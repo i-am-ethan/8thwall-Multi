@@ -35,9 +35,14 @@ io.on('connection', (socket)=>{
 
     // clientとserverが同期された時の処理
     socket.on('client_to_server_join', (data)=>{
+        io.to(roomid).emit('client_to_server_join', data);
+    })
+
+    // room-idの受送信
+    socket.on('join_room', (data)=>{
         roomid = data;
         socket.join(roomid);
-        io.to(roomid).emit('client_to_server_join', data);
+        io.to(roomid).emit('join_room', data);
     })
 
     // clientからgenerate_boxが送信された時

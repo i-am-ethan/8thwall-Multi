@@ -28,11 +28,7 @@ socket.on("connect", () => {
 
 
 socket.on("client_to_server_join", (data)=>{
-    // let greetingMessage = JSON.stringify(data)
     console.log("dataです！！！！！！！"+data)
-    // let greetingMessage = JSON.parse(data)
-    // let greetingMessage = JSON.parse(data)
-    // console.log("GREETING MESSAGE"+JSON.stringify(greetingMessage))
 
     const debugConsole03 = document.createElement("p")
     debugConsole03.innerHTML = "HELLO!!" + data + "が入室したよ";
@@ -48,7 +44,7 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
 
     console.log("loadしました");
 
-    // socket.emit('client_to_server_join', roomid)
+    socket.emit('join_room', roomid)
 
 
     const displayDebugConsole = () => { // roomidをdebugConsoleに表示する関数
