@@ -27,7 +27,7 @@ socket.on("connect", () => {
 
 socket.on("client_to_server_join", (data)=>{
     let greetingMessage = JSON.parse(data)
-    console.log("cubeの配列(getAttribute)"+JSON.stringify(greetingMessage))
+    console.log("GREETING MESSAGE"+JSON.stringify(greetingMessage))
 })
 
 
