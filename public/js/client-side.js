@@ -70,6 +70,7 @@ AFRAME.registerComponent('random-cube-generator', {
         // ground.addEventListener('click', (event)=> {
 
             let random = Math.floor(Math.random()*7)
+            let randomID = Math.floor(Math.random()*100)
 
             // const touchPoint = event.detail.intersection.point
 
@@ -80,7 +81,7 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("scale", "3 3 3")
             newCube.setAttribute('position', "0 0 0")
             newCube.setAttribute("class", "cantap")
-            newCube.setAttribute("id", "created-box")
+            newCube.setAttribute("id", `created-box${randomID}`)
             newCube.setAttribute("xrextras-hold-drag", "")
             newCube.setAttribute("xrextras-two-finger-rotate", "")
             newCube.setAttribute("xrextras-pinch-scale", "")
