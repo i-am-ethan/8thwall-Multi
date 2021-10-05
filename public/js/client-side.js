@@ -90,6 +90,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
             const hogehoge = () => {
                 console.log(newCube.object3D.position)
+                console.log("randomIDが一定に出てくるかを確認する:"+randomID)
                 sendGenarateBox(newCube) //500msに1回サーバーに送信する
                 setTimeout(hogehoge, 500)
             }
