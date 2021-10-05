@@ -130,7 +130,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
         socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
             // フラグを設定(true:get-attribute / false:create-element)
-            console.log("initialData:"+initialData)
+            // console.log("initialData:"+initialData)
             // if(!initialData){
             //     console.log("initialData:false")
             //     let cubeData = JSON.parse(data)
@@ -144,8 +144,8 @@ AFRAME.registerComponent('random-cube-generator', {
         
 
             // console.log("socket.on generate_box")
-            // let cubeData = JSON.parse(data)
-            // console.log(cubeData)
+            let cubeData = JSON.parse(data)
+            console.log(cubeData)
             // let cube = cubeData.cube;
             // let newCube = document.createElement("a-box");
             // newCube.setAttribute("color", cube[0].color)
