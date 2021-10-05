@@ -66,6 +66,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
         const newCube = document.createElement("a-box")
+        console.log("newCubeが生成されました!!!!!!!")
         newCube.setAttribute("color", "#ff3300")
         // newCube.setAttribute("color", `${randomCubeColor[random]}`)
         newCube.setAttribute("scale", "3 3 3")
@@ -135,16 +136,16 @@ AFRAME.registerComponent('random-cube-generator', {
             }
         
             // フラグがtrueのとき
-            let cubeData = JSON.parse(data)
-            console.log(cubeData)
-            let cube = cubeData.cube;
-            let newCube = document.createElement("a-box");
-            newCube.setAttribute("color", cube[0].color)
-            newCube.setAttribute("position", cube[1].position)
-            newCube.setAttribute("scale", cube[2].scale)
-            newCube.setAttribute("id", cube[3].id)
-            scene.appendChild(newCube)
-            console.log("cubeの配列"+JSON.stringify(cube))
+            // let cubeData = JSON.parse(data)
+            // console.log(cubeData)
+            // let cube = cubeData.cube;
+            // let newCube = document.createElement("a-box");
+            // newCube.setAttribute("color", cube[0].color)
+            // newCube.setAttribute("position", cube[1].position)
+            // newCube.setAttribute("scale", cube[2].scale)
+            // newCube.setAttribute("id", cube[3].id)
+            // scene.appendChild(newCube)
+            // console.log("cubeの配列"+JSON.stringify(cube))
 
 
             initialData = false
