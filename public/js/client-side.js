@@ -149,5 +149,6 @@ AFRAME.registerComponent('foo', {
     qux: function () {
         var fooComponent = document.querySelector('[foo]').components.foo;
         console.log(fooComponent.bar);
+        fooComponent.qux();
     }
   });
