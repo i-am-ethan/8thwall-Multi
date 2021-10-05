@@ -75,10 +75,12 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
             const newCube = document.createElement("a-box")
-            newCube.setAttribute("color", `${randomCubeColor[random]}`)
+            newCube.setAttribute("color", "#ff3300")
+            // newCube.setAttribute("color", `${randomCubeColor[random]}`)
             newCube.setAttribute("scale", "3 3 3")
             newCube.setAttribute('position', "0 0 0")
             newCube.setAttribute("class", "cantap")
+            newCube.setAttribute("id", "box")
             newCube.setAttribute("xrextras-hold-drag", "")
             newCube.setAttribute("xrextras-two-finger-rotate", "")
             newCube.setAttribute("xrextras-pinch-scale", "")
@@ -100,10 +102,10 @@ AFRAME.registerComponent('random-cube-generator', {
             function sendGenarateBox(newCube){
                 let socketdata = {} //socket-data objectを生成
                 let cube = [] //cube配列生成
-                cube.push({color: `${randomCubeColor[random]}`}) //cube配列に押し込んでいく
+                cube.push({color: "#ff3300"}) //cube配列に押し込んでいく
                 cube.push({position: "0 0 0"}) //cube配列に押し込んでいく
                 // cube.push({position: touchPoint.x +" "+touchPoint.y+" "+touchPoint.z}) //cube配列に押し込んでいく
-                cube.push({scale: "1 1 1"});
+                cube.push({scale: "3 3 3"});
                 socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
                 socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
             }
@@ -117,6 +119,13 @@ AFRAME.registerComponent('random-cube-generator', {
             console.log("initialData:"+initialData)
             if(!initialData){
                 console.log("initialData:false")
+                let cubeData = JSON.parse(data)
+                let cube = cubeData.cube;
+                let newCube = document.getElementById("box");
+                newCube.setAttribute("color", cube[0].color)
+                newCube.setAttribute("position", cube[1].position)
+                newCube.setAttribute("scale", cube[2].scale)
+                scene.appendChild(newCube)
             }
         
 
