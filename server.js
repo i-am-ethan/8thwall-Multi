@@ -42,8 +42,8 @@ io.on('connection', (socket)=>{
     socket.on('join_room', (data)=>{
         roomid = data;
         socket.join(roomid);
-        io.broadcast.to(roomid).emit('join_room', data);
-        // io.to(roomid).emit('join_room', data);
+        // io.broadcast.to(roomid).emit('join_room', data);
+        io.to(roomid).emit('join_room', data);
     })
 
     // clientからgenerate_boxが送信された時
