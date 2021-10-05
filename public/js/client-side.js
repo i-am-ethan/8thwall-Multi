@@ -32,10 +32,10 @@ socket.on("client_to_server_join", (data)=>{
     console.log("dataです！！！！！！！"+data)
     // let greetingMessage = JSON.parse(data)
     // let greetingMessage = JSON.parse(data)
-    console.log("GREETING MESSAGE"+JSON.stringify(greetingMessage))
+    // console.log("GREETING MESSAGE"+JSON.stringify(greetingMessage))
 
     const debugConsole03 = document.createElement("p")
-    debugConsole03.innerHTML = "HELLO!!" + socket.id + "が入室したよ";
+    debugConsole03.innerHTML = "HELLO!!" + data + "が入室したよ";
     debugConsole.appendChild(debugConsole03)
 })
 
