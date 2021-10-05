@@ -80,7 +80,7 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("scale", "3 3 3")
             newCube.setAttribute('position', "0 0 0")
             newCube.setAttribute("class", "cantap")
-            newCube.setAttribute("id", "box")
+            newCube.setAttribute("id", "created-box")
             newCube.setAttribute("xrextras-hold-drag", "")
             newCube.setAttribute("xrextras-two-finger-rotate", "")
             newCube.setAttribute("xrextras-pinch-scale", "")
@@ -117,30 +117,30 @@ AFRAME.registerComponent('random-cube-generator', {
         socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
             // フラグを設定(true:get-attribute / false:create-element)
             console.log("initialData:"+initialData)
-            if(!initialData){
-                console.log("initialData:false")
-                let cubeData = JSON.parse(data)
-                let cube = cubeData.cube;
-                let newCube = document.getElementById("box");
-                newCube.setAttribute("color", cube[0].color)
-                newCube.setAttribute("position", cube[1].position)
-                newCube.setAttribute("scale", cube[2].scale)
-                scene.appendChild(newCube)
-            }
+            // if(!initialData){
+            //     console.log("initialData:false")
+            //     let cubeData = JSON.parse(data)
+            //     let cube = cubeData.cube;
+            //     let newCube = document.getElementById("box");
+            //     newCube.setAttribute("color", cube[0].color)
+            //     newCube.setAttribute("position", cube[1].position)
+            //     newCube.setAttribute("scale", cube[2].scale)
+            //     scene.appendChild(newCube)
+            // }
         
 
-            console.log("socket.on generate_box")
-            let cubeData = JSON.parse(data)
-            console.log(cubeData)
-            let cube = cubeData.cube;
-            let newCube = document.createElement("a-box");
-            newCube.setAttribute("color", cube[0].color)
-            newCube.setAttribute("position", cube[1].position)
-            newCube.setAttribute("scale", cube[2].scale)
-            scene.appendChild(newCube)
-            console.log("cubeの配列"+JSON.stringify(cube))
+            // console.log("socket.on generate_box")
+            // let cubeData = JSON.parse(data)
+            // console.log(cubeData)
+            // let cube = cubeData.cube;
+            // let newCube = document.createElement("a-box");
+            // newCube.setAttribute("color", cube[0].color)
+            // newCube.setAttribute("position", cube[1].position)
+            // newCube.setAttribute("scale", cube[2].scale)
+            // scene.appendChild(newCube)
+            // console.log("cubeの配列"+JSON.stringify(cube))
 
-            initialData = false
+            // initialData = false
         })
 
       
