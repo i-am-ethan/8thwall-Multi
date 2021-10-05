@@ -137,7 +137,7 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("color", cube[0].color)
             newCube.setAttribute("position", cube[1].position)
             newCube.setAttribute("scale", cube[2].scale)
-            newCube.setAttribute("scale", cube[3].id)
+            // newCube.setAttribute("scale", cube[3].id)
             scene.appendChild(newCube)
             console.log("cubeの配列"+JSON.stringify(cube))
 
