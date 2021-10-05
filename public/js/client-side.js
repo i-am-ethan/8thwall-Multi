@@ -125,7 +125,9 @@ AFRAME.registerComponent('random-cube-generator', {
                 let cube = cubeData.cube;
                 console.log("cubeの配列(getAttribute)"+JSON.stringify(cube))
                 console.log("idをgetする!!!!!"+JSON.stringify(cube[1]))
-                let newCube = document.getElementById("box");
+                let newCube = document.getElementById(JSON.stringify(cube[1]));
+                console.log(newCube.object3D.id)
+                // let newCube = document.getElementById("box");
                 if(!newCube){return}
                 newCube.setAttribute("position", cube[0].position)
                 newCube.setAttribute("id", cube[1].id)
