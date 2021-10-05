@@ -98,6 +98,7 @@ AFRAME.registerComponent('random-cube-generator', {
             let socketdata = {} //socket-data objectを生成
             let cube = [] //cube配列生成
             cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
+            cube.push({id: `created-box${randomID}`});
             socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
             socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
         }
@@ -126,6 +127,7 @@ AFRAME.registerComponent('random-cube-generator', {
                 let newCube = document.getElementById("box");
                 if(!newCube){return}
                 newCube.setAttribute("position", cube[0].position)
+                newCube.setAttribute("id", cube[1].id)
                 scene.appendChild(newCube)
             }
         
@@ -137,7 +139,7 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("color", cube[0].color)
             newCube.setAttribute("position", cube[1].position)
             newCube.setAttribute("scale", cube[2].scale)
-            newCube.setAttribute("scale", cube[3].id)
+            newCube.setAttribute("id", cube[3].id)
             scene.appendChild(newCube)
             console.log("cubeの配列"+JSON.stringify(cube))
 
