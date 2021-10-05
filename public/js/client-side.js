@@ -128,7 +128,7 @@ AFRAME.registerComponent('random-cube-generator', {
                 // let newCube = document.getElementById(JSON.stringify(cube[1]));
                 console.log(scene)
                 // let newCube = document.getElementById("box");
-                if(!newCube){return}
+                // if(!newCube){return}
                 // newCube.setAttribute("position", cube[0].position)
                 // newCube.setAttribute("id", cube[1].id)
                 // scene.appendChild(newCube)
