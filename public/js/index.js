@@ -360,3 +360,10 @@
         
         
     // }) 
+
+
+
+
+
+    // touch pointの取得
+    // const touchPoint = event.detail.intersection.point
