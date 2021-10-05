@@ -77,13 +77,6 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-pinch-scale", "")
         scene.appendChild(newCube)
 
-        // const hogehoge = () => {
-        //     // console.log(newCube.object3D.position)
-        //     // console.log("randomIDが一定に出てくるかを確認する:"+randomID)
-        //     sendGenarateBox(newCube) //500msに1回サーバーに送信する
-        //     setTimeout(hogehoge, 500)
-        // }
-        // hogehoge()
 
         // 初回にboxをcreateする時の送信情報
         function sendGenarateBox(newCube){
@@ -101,36 +94,41 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
         //２回目以降にboxの位置情報だけ送信する場合
-        // function sendBoxPosition(newCube){
-        //     let socketdata = {} //socket-data objectを生成
-        //     let cube = [] //cube配列生成
-        //     cube.push({position: "0 0 0"}) //cube配列に押し込んでいく
-        //     // cube.push({position: touchPoint.x +" "+touchPoint.y+" "+touchPoint.z}) //cube配列に押し込んでいく
-        //     socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
-        //     socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
-        // }
+        function sendBoxPosition(newCube){
+            let socketdata = {} //socket-data objectを生成
+            let cube = [] //cube配列生成
+            cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
+            socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
+            socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
+        }
+
+        const hogehoge = () => {
+            // console.log(newCube.object3D.position)
+            // console.log("randomIDが一定に出てくるかを確認する:"+randomID)
+            sendBoxPosition(newCube) //500msに1回サーバーに送信する
+            setTimeout(hogehoge, 500)
+        }
+        hogehoge()
 
 
-        // let initialData;
+        let initialData = true;
 
 
         //情報を取得した時の処理
         socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
             // フラグを設定(true:get-attribute / false:create-element)
-            // console.log("initialData:"+initialData)
-            // if(!initialData){
-            //     console.log("initialData:false")
-            //     let cubeData = JSON.parse(data)
-            //     let cube = cubeData.cube;
-            //     let newCube = document.getElementById("box");
-            //     newCube.setAttribute("color", cube[0].color)
-            //     newCube.setAttribute("position", cube[1].position)
-            //     newCube.setAttribute("scale", cube[2].scale)
-            //     scene.appendChild(newCube)
-            // }
+            console.log("initialData:"+initialData)
+            if(!initialData){
+                console.log("initialData:false")
+                let cubeData = JSON.parse(data)
+                let cube = cubeData.cube;
+                console.log("cubeの配列(getAttribute)"+JSON.stringify(cube))
+                let newCube = document.getElementById("box");
+                newCube.setAttribute("position", cube[0].position)
+                scene.appendChild(newCube)
+            }
         
-
-            // console.log("socket.on generate_box")
+            // フラグがtrueのとき
             let cubeData = JSON.parse(data)
             console.log(cubeData)
             let cube = cubeData.cube;
@@ -138,11 +136,12 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("color", cube[0].color)
             newCube.setAttribute("position", cube[1].position)
             newCube.setAttribute("scale", cube[2].scale)
-            // newCube.setAttribute("scale", cube[3].id)
+            newCube.setAttribute("scale", cube[3].id)
             scene.appendChild(newCube)
             console.log("cubeの配列"+JSON.stringify(cube))
 
-            // initialData = false
+
+            initialData = false
         })
 
       
