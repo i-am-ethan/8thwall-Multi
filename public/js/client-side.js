@@ -89,18 +89,16 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
             const hogehoge = () => {
-                console.log(newCube.object3D.position)
-                console.log("randomIDが一定に出てくるかを確認する:"+randomID)
+                // console.log(newCube.object3D.position)
+                // console.log("randomIDが一定に出てくるかを確認する:"+randomID)
                 sendGenarateBox(newCube) //500msに1回サーバーに送信する
                 setTimeout(hogehoge, 500)
             }
             hogehoge()
 
-            // this.hoge = "hogehoge initだよ"
-
-
-
             
+
+            // 初回にboxをcreateする時の送信情報
             function sendGenarateBox(newCube){
                 let socketdata = {} //socket-data objectを生成
                 let cube = [] //cube配列生成
@@ -108,9 +106,23 @@ AFRAME.registerComponent('random-cube-generator', {
                 cube.push({position: "0 0 0"}) //cube配列に押し込んでいく
                 // cube.push({position: touchPoint.x +" "+touchPoint.y+" "+touchPoint.z}) //cube配列に押し込んでいく
                 cube.push({scale: "3 3 3"});
+                cube.push({id: randomID});
                 socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
                 socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
             }
+
+            //２回目以降にboxの位置情報だけ送信する場合
+            function sendBoxPosition(newCube){
+                let socketdata = {} //socket-data objectを生成
+                let cube = [] //cube配列生成
+                cube.push({position: "0 0 0"}) //cube配列に押し込んでいく
+                // cube.push({position: touchPoint.x +" "+touchPoint.y+" "+touchPoint.z}) //cube配列に押し込んでいく
+                socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
+                socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
+            }
+
+
+
         // })
   
 
