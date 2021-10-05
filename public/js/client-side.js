@@ -47,13 +47,13 @@ window.addEventListener('load', ()=>{ //ロード時に同期したことを知�
     socket.emit('join_room', roomid) // room-idを送信する
 
 
-    const displayDebugConsole = () => { // roomidをdebugConsoleに表示する関数
-        const debugConsole03 = document.createElement("p")
-        debugConsole03.innerHTML = "room-id:" + roomid;
-        debugConsole.appendChild(debugConsole03)
-        console.log(roomid)
-    }
-    setTimeout(displayDebugConsole,3000)
+    // const displayDebugConsole = () => { // roomidをdebugConsoleに表示する関数
+    //     const debugConsole03 = document.createElement("p")
+    //     debugConsole03.innerHTML = "room-id:" + roomid;
+    //     debugConsole.appendChild(debugConsole03)
+    //     console.log(roomid)
+    // }
+    // setTimeout(displayDebugConsole,3000)
 
 
 })
