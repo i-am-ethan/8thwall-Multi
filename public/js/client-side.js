@@ -139,6 +139,8 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("id", cube[3].id)
             scene.appendChild(newCube)
             console.log("cubeの配列"+JSON.stringify(cube))
+            console.log(scene)
+
 
 
             initialData = false
