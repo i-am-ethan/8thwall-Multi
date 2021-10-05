@@ -258,7 +258,7 @@
 
 
 
-    
+
     //     // main loop
     //     tick: function (time, timeDelta) {
     //       if (this.data.camerastatus == "hasVideo") {
@@ -332,3 +332,31 @@
     //       }
     //     }
     //   });
+
+
+
+
+
+
+
+    // AFRAME.registerComponent('random-cube-generator', {
+    //     init() {
+    //             const scene = this.el.sceneEl;
+
+    //             const newCube = document.createElement("a-box")
+    //             newCube.setAttribute("color", `${randomCubeColor[random]}`)
+    //             newCube.setAttribute("scale", "3 3 3")
+    //             newCube.setAttribute('position', "0 0 0")
+    //             newCube.setAttribute("class", "cantap")
+    //             newCube.setAttribute("xrextras-hold-drag", "")
+    //             newCube.setAttribute("xrextras-two-finger-rotate", "")
+    //             newCube.setAttribute("xrextras-pinch-scale", "")
+    //             scene.appendChild(newCube)  
+    //       },
+    
+    //       tick(){
+    //           console.log(newCube.object3D.position)
+    //       }
+        
+        
+    // }) 

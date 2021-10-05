@@ -140,3 +140,13 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
 
+AFRAME.registerComponent('foo', {
+    init: function () {
+      this.bar = 'baz';
+      console.log("fooを読み込みました")
+    },
+  
+    qux: function () {
+      // ...
+    }
+  });
