@@ -93,6 +93,7 @@ AFRAME.registerComponent('random-cube-generator', {
             cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
             cube.push({scale: "3 3 3"});
             cube.push({id: `"${randomID}"`});
+            // cube.push({id: `"${randomID}"`});
             socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
             socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
         }
