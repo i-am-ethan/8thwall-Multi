@@ -124,6 +124,7 @@ AFRAME.registerComponent('random-cube-generator', {
                 let cube = cubeData.cube;
                 console.log("cubeの配列(getAttribute)"+JSON.stringify(cube))
                 let newCube = document.getElementById("box");
+                if(!newCube){return}
                 newCube.setAttribute("position", cube[0].position)
                 scene.appendChild(newCube)
             }
@@ -143,17 +144,9 @@ AFRAME.registerComponent('random-cube-generator', {
 
             initialData = false
         })
-
-      
+ 
       },
 
-
-      // 1秒間に60-120回
-    //   tick(){
-    //       console.log("tickがお呼ばれされています。")
-    //     //   console.log(newCube.object3D.position)
-    //     //   const hogehogeComponent = document.querySelector('[random-cube-generator]').components.random-cube-generator;
-    //   }
     
     
 }) 
