@@ -70,8 +70,8 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-hold-drag", "")
         newCube.setAttribute("xrextras-two-finger-rotate", "")
         newCube.setAttribute("xrextras-pinch-scale", "")
-        console.log(testCube.object3D.position)
-        console.log(testCube.object3D.scale)
+        console.log(newCube.object3D.position)
+        console.log(newCube.object3D.scale)
         scene.appendChild(newCube)
 
 
@@ -143,6 +143,8 @@ AFRAME.registerComponent('random-cube-generator', {
 
             let updateCube = document.getElementById(replaced);
             console.log(updateCube)
+            console.log(updateCube.object3D.position)
+            console.log(updateCube.object3D.scale)
             // // // if(!updateCube){return}
             // updateCube.setAttribute("color", cube[0].color)
             // updateCube.setAttribute("position", cube[1].position)
