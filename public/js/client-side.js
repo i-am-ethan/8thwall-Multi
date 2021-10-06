@@ -69,6 +69,7 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-two-finger-rotate", "")
         newCube.setAttribute("xrextras-pinch-scale", "")
         scene.appendChild(newCube)
+        console.log("ちゃんとpositionがappendされているか"+scene)
         console.log("1番最初にクリエイトして送信するとき:"+randomID)
 
         // 初回にboxをcreateする時の送信情報
@@ -102,9 +103,9 @@ AFRAME.registerComponent('random-cube-generator', {
             console.log("送信しているIDが正しいかの確認:"+randomID)
             sendBoxPosition(newCube) //500msに1回サーバーに送信する
             // setTimeout(hogehoge, 500)
+            setTimeout(hogehoge, 10000) //10秒後に実行する
         }
-        setTimeout(hogehoge, 10000) //7秒後に実行する
-        // hogehoge()
+        hogehoge()
 
         // 誰かが部屋に入ってきたときにこの処理を実装する
         //情報を取得した時の処理
@@ -128,8 +129,8 @@ AFRAME.registerComponent('random-cube-generator', {
 
             let cubeData = JSON.parse(data)
             let cube = cubeData.cube;
-            console.log("cubeの配列(getAttribute)"+JSON.stringify(cube))
-            console.log("idをgetする!!!!!"+JSON.stringify(cube[1]))
+            console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
+            console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[1]))
             let updateCube = document.getElementById(JSON.stringify(cube[1]));
             console.log(scene)
             if(!updateCube){return}
