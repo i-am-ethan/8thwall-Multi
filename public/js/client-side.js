@@ -118,7 +118,8 @@ AFRAME.registerComponent('random-cube-generator', {
             let cube = cubeData.cube;
             let newCube = document.createElement("a-box");
             newCube.setAttribute("color", cube[0].color)
-            newCube.object3D.position.set(cube[1].position)
+            newCube.object3D.position.set(cube[1].position.x, cube[1].position.y, cube[1].position.z)
+            // newCube.object3D.position.set(cube[1].position)
             newCube.object3D.scale.set(cube[2].scale)
             // newCube.setAttribute("position", cube[1].position)
             // newCube.setAttribute("scale", cube[2].scale)
@@ -149,7 +150,7 @@ AFRAME.registerComponent('random-cube-generator', {
             // console.log(updateCube.object3D.scale)
             // // // if(!updateCube){return}
             updateCube.setAttribute("color", cube[0].color)
-            updateCube.object3D.position.set(cube[1].position)
+            updateCube.object3D.position.set(cube[1].position.x, cube[1].position.y, cube[1].position.z)
             updateCube.object3D.scale.set(cube[2].scale)
             // updateCube.setAttribute("position", cube[1].position)
             // updateCube.setAttribute("scale", cube[2].scale)
