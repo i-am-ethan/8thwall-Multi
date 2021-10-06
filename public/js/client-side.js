@@ -131,6 +131,8 @@ AFRAME.registerComponent('random-cube-generator', {
         })
 
         socket.on("update_box_position", (data) => { //sceneを認識する為にこの位置に設定
+            console.log(data)
+
 
             // console.log("positionのupdateを受け取る")
 
