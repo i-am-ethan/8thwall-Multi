@@ -71,6 +71,9 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-pinch-scale", "")
         console.log(newCube)
         scene.appendChild(newCube)
+
+        let test = document.getElementById("test")
+        console.log(test)
         // console.log("ちゃんとpositionがappendされているか")
         // console.log("1番最初にクリエイトして送信するとき:"+randomID)
 
