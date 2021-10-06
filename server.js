@@ -55,11 +55,11 @@ io.on('connection', (socket)=>{
     });
 
     //cubeのpositionの更新
-    socket.on('update_box_position', function(data) {
-        //同じroomidの接続者全員にdataを送る(第一引数がイベント名、第二引数が送信する値)
-        socket.to(roomid).emit('update_box_position', data);
-        //⇨ その後、client側で受け取る必要がある。
-    });
+    // socket.on('update_box_position', function(data) {
+    //     //同じroomidの接続者全員にdataを送る(第一引数がイベント名、第二引数が送信する値)
+    //     socket.to(roomid).emit('update_box_position', data);
+    //     //⇨ その後、client側で受け取る必要がある。
+    // });
 
 
 })
