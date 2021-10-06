@@ -62,7 +62,7 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("color", "#ff3300")
         // newCube.setAttribute("color", `${randomCubeColor[random]}`)
         newCube.setAttribute("scale", "3 3 3")
-        newCube.setAttribute('position', "2 0 0")
+        newCube.setAttribute('position', "0 0 0")
         newCube.setAttribute("class", "cantap")
         newCube.setAttribute("id", `created-box${randomID}`)
         newCube.setAttribute("xrextras-hold-drag", "")
@@ -133,11 +133,12 @@ AFRAME.registerComponent('random-cube-generator', {
             console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
             console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[1]))
             let updateCube = document.getElementById(JSON.stringify(cube[1]));
-            console.log(scene)
             if(!updateCube){return}
             updateCube.setAttribute("position", cube[0].position)
             updateCube.setAttribute("id", cube[1].id)
             scene.appendChild(updateCube)
+            console.log("位置情報を取得して、getElementByIDをした後のscene")
+            console.log(scene)
 
         })
 
