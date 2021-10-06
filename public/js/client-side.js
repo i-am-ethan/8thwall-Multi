@@ -16,10 +16,10 @@ socket.on("connect", () => {
     // console.log(socket.connected) // true of false
 
     const debugConsole02 = document.createElement("p")
-    debugConsole02.innerHTML = "client-id:" + socket.id;
+    debugConsole02.innerHTML = "Client-id:" + socket.id;
     debugConsole.appendChild(debugConsole02)
     const debugConsoleRoomId = document.createElement("p")
-    debugConsoleRoomId.innerHTML = "your room-id:"+ clientRoomId;
+    debugConsoleRoomId.innerHTML = "Room-id:"+ clientRoomId;
     debugConsole.appendChild(debugConsoleRoomId)
 
     socket.emit('client_to_server_join', socket.id)
@@ -29,7 +29,7 @@ socket.on("connect", () => {
 socket.on("client_to_server_join", (data)=>{
     // console.log("dataです！！！！！！！"+data)
     const debugConsole03 = document.createElement("p")
-    debugConsole03.innerHTML = "HELLO!!" + data + "が入室したよ";
+    debugConsole03.innerHTML = "HELLO!!" + data + "が入室しました";
     debugConsole.appendChild(debugConsole03)
 })
 
@@ -147,19 +147,3 @@ AFRAME.registerComponent('random-cube-generator', {
     
     
 }) 
-
-
-
-
-// AFRAME.registerComponent('foo', {
-//     init: function () {
-//       this.bar = 'baz';
-//       console.log("read foo")
-//     },
-  
-//     qux: function () {
-//         var fooComponent = document.querySelector('[foo]').components.foo;
-//         console.log(fooComponent.bar);
-//         fooComponent.qux();
-//     }
-//   });
