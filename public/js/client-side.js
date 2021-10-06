@@ -70,7 +70,7 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-two-finger-rotate", "")
         newCube.setAttribute("xrextras-pinch-scale", "")
         console.log(newCube)
-        scene.appendChild(newCube)
+        // scene.appendChild(newCube)
 
         let test = document.getElementById("test")
         console.log(test)
