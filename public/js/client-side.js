@@ -62,7 +62,7 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("color", "#ff3300")
         // newCube.setAttribute("color", `${randomCubeColor[random]}`)
         newCube.setAttribute("scale", "3 3 3")
-        newCube.setAttribute('position', "0 0 0")
+        newCube.setAttribute("position", "0 0 0")
         newCube.setAttribute("class", "cantap")
         newCube.setAttribute("id", `created-box${randomID}`)
         newCube.setAttribute("xrextras-hold-drag", "")
@@ -70,7 +70,7 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-pinch-scale", "")
         scene.appendChild(newCube)
         console.log("ちゃんとpositionがappendされているか")
-        console.log(scene)
+        console.log(newCube)
         console.log("1番最初にクリエイトして送信するとき:"+randomID)
 
         // 初回にboxをcreateする時の送信情報
