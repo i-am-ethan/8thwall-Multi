@@ -133,9 +133,9 @@ AFRAME.registerComponent('random-cube-generator', {
             let cubeData = JSON.parse(data)
             let cube = cubeData.cube;
             console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
-            console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[1]))
-            console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[1].id))
-            let updateCubeID = JSON.stringify(cube[1].id)
+            console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3]))
+            console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3].id))
+            let updateCubeID = JSON.stringify(cube[3].id)
             let replaced = updateCubeID.replace(/"/g, '')//ダブルクオーテーションを削除
 
             let updateCube = document.getElementById(replaced);
