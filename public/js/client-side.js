@@ -63,8 +63,7 @@ AFRAME.registerComponent('random-cube-generator', {
         // newCube.setAttribute("color", `${randomCubeColor[random]}`)
         // newCube.setAttribute("scale", "3 3 3")
         newCube.setAttribute("class", "cantap")
-        // newCube.setAttribute("position", "0 0 0")
-        newCube.object3D.position.set(1, 2, 3);
+        newCube.setAttribute("position", "0 0 0")
         newCube.setAttribute("scale", "3 3 3")
         newCube.setAttribute("id", `created-box${randomID}`)
         newCube.setAttribute("xrextras-hold-drag", "")
@@ -79,89 +78,89 @@ AFRAME.registerComponent('random-cube-generator', {
         // console.log("1番最初にクリエイトして送信するとき:"+randomID)
 
         // 初回にboxをcreateする時の送信情報
-        function sendGenarateBox(newCube){
-            let socketdata = {} //socket-data objectを生成
-            let cube = [] //cube配列生成
-            cube.push({color: "#ff3300"}) //cube配列に押し込んでいく
-            cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
-            cube.push({scale: "3 3 3"});
-            cube.push({id: `created-box${randomID}`});
-            // cube.push({id: `"${randomID}"`});
-            socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
-            socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
-        }
-        sendGenarateBox(newCube) //500msに1回サーバーに送信する
+        // function sendGenarateBox(newCube){
+        //     let socketdata = {} //socket-data objectを生成
+        //     let cube = [] //cube配列生成
+        //     cube.push({color: "#ff3300"}) //cube配列に押し込んでいく
+        //     cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
+        //     cube.push({scale: "3 3 3"});
+        //     cube.push({id: `created-box${randomID}`});
+        //     // cube.push({id: `"${randomID}"`});
+        //     socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
+        //     socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
+        // }
+        // sendGenarateBox(newCube) //500msに1回サーバーに送信する
 
 
         //２回目以降にboxの位置情報だけ送信する場合(id名とポジションの情報だけ送信する)
-        function sendBoxPosition(newCube){
-            let socketdata = {} //socket-data objectを生成
-            let cube = [] //cube配列生成
-            cube.push({color: "#ff3300"}) //cube配列に押し込んでいく
-            cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
-            cube.push({scale: "3 3 3"});
-            cube.push({id: `created-box${randomID}`});
-            socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
-            socket.emit("update_box_position", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
-        }
+        // function sendBoxPosition(newCube){
+        //     let socketdata = {} //socket-data objectを生成
+        //     let cube = [] //cube配列生成
+        //     cube.push({color: "#ff3300"}) //cube配列に押し込んでいく
+        //     cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
+        //     cube.push({scale: "3 3 3"});
+        //     cube.push({id: `created-box${randomID}`});
+        //     socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
+        //     socket.emit("update_box_position", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
+        // }
 
-        const hogehoge = () => {
-            // console.log("ポジションの共有を開始する")
-            console.log("動かした後のポジションを確認"+newCube.object3D.position)
-            // console.log("送信しているIDが正しいかの確認:"+randomID)
-            sendBoxPosition(newCube) //500msに1回サーバーに送信する
-            // setTimeout(hogehoge, 500)
-            setTimeout(hogehoge, 10000) //10秒後に実行する
-        }
-        hogehoge()
+        // const hogehoge = () => {
+        //     // console.log("ポジションの共有を開始する")
+        //     console.log("動かした後のポジションを確認"+newCube.object3D.position)
+        //     // console.log("送信しているIDが正しいかの確認:"+randomID)
+        //     sendBoxPosition(newCube) //500msに1回サーバーに送信する
+        //     // setTimeout(hogehoge, 500)
+        //     setTimeout(hogehoge, 10000) //10秒後に実行する
+        // }
+        // hogehoge()
 
         // 誰かが部屋に入ってきたときにこの処理を実装する
         //情報を取得した時の処理
-        socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
-            let cubeData = JSON.parse(data)
-            // console.log(cubeData)
-            let cube = cubeData.cube;
-            let newCube = document.createElement("a-box");
-            newCube.setAttribute("color", cube[0].color)
-            newCube.setAttribute("position", cube[1].position)
-            newCube.setAttribute("scale", cube[2].scale)
-            newCube.setAttribute("id", cube[3].id)
-            scene.appendChild(newCube)
-            // console.log("cubeの配列"+JSON.stringify(cube))
-            // console.log(scene)
-        })
+        // socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
+        //     let cubeData = JSON.parse(data)
+        //     // console.log(cubeData)
+        //     let cube = cubeData.cube;
+        //     let newCube = document.createElement("a-box");
+        //     newCube.setAttribute("color", cube[0].color)
+        //     newCube.setAttribute("position", cube[1].position)
+        //     newCube.setAttribute("scale", cube[2].scale)
+        //     newCube.setAttribute("id", cube[3].id)
+        //     scene.appendChild(newCube)
+        //     // console.log("cubeの配列"+JSON.stringify(cube))
+        //     // console.log(scene)
+        // })
 
-        socket.on("update_box_position", (data) => { //sceneを認識する為にこの位置に設定
+        // socket.on("update_box_position", (data) => { //sceneを認識する為にこの位置に設定
 
-            // console.log("positionのupdateを受け取る")
+        //     // console.log("positionのupdateを受け取る")
 
-            let cubeData = JSON.parse(data)
-            let cube = cubeData.cube;
-            // console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
-            // console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3]))
-            // console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3].id))
-            let updateCubeID = JSON.stringify(cube[3].id)
-            let replaced = updateCubeID.replace(/"/g, '')//ダブルクオーテーションを削除
-
-
-            // idを取得する
-
-            let updateCube = document.getElementById(replaced);
-            console.log(updateCube)
-            // // // if(!updateCube){return}
-            // updateCube.setAttribute("color", cube[0].color)
-            // updateCube.setAttribute("position", cube[1].position)
-            // updateCube.setAttribute("scale", cube[2].scale)
-            // updateCube.setAttribute("id", cube[3].id)
-            // scene.appendChild(updateCube)
-            // // console.log("位置情報を取得して、getElementByIDをした後のscene")
-            // console.log(scene)
-
-            let test = document.getElementById("test")
-            console.log(test)
+        //     let cubeData = JSON.parse(data)
+        //     let cube = cubeData.cube;
+        //     // console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
+        //     // console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3]))
+        //     // console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3].id))
+        //     let updateCubeID = JSON.stringify(cube[3].id)
+        //     let replaced = updateCubeID.replace(/"/g, '')//ダブルクオーテーションを削除
 
 
-        })
+        //     // idを取得する
+
+        //     let updateCube = document.getElementById(replaced);
+        //     console.log(updateCube)
+        //     // // // if(!updateCube){return}
+        //     // updateCube.setAttribute("color", cube[0].color)
+        //     // updateCube.setAttribute("position", cube[1].position)
+        //     // updateCube.setAttribute("scale", cube[2].scale)
+        //     // updateCube.setAttribute("id", cube[3].id)
+        //     // scene.appendChild(updateCube)
+        //     // // console.log("位置情報を取得して、getElementByIDをした後のscene")
+        //     // console.log(scene)
+
+        //     let test = document.getElementById("test")
+        //     console.log(test)
+
+
+        // })
 
 
  
