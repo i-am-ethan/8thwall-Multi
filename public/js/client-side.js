@@ -97,6 +97,7 @@ AFRAME.registerComponent('random-cube-generator', {
         }
 
         const hogehoge = () => {
+            console.log("ポジションの共有を開始する")
             console.log("動かした後のポジションを確認"+newCube.object3D.position)
             console.log("送信しているIDが正しいかの確認:"+randomID)
             sendBoxPosition(newCube) //500msに1回サーバーに送信する
@@ -133,7 +134,7 @@ AFRAME.registerComponent('random-cube-generator', {
             updateCube.setAttribute("position", cube[0].position)
             updateCube.setAttribute("id", cube[1].id)
             scene.appendChild(updateCube)
-            
+
         })
 
 
