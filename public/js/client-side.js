@@ -133,6 +133,10 @@ AFRAME.registerComponent('random-cube-generator', {
             console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
             console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[1]))
             console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[1].id))
+            let updateCubeID = JSON.stringify(cube[1].id)
+            console.log(updateCubeID)
+            let testID ="test"
+            console.log(testID)
             // let updateCube = document.getElementById(JSON.stringify(cube[1].id));
             // console.log(updateCube)
             // // if(!updateCube){return}
