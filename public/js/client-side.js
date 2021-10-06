@@ -108,7 +108,7 @@ AFRAME.registerComponent('random-cube-generator', {
 
         let initialData = true;
 
-
+        // 誰かが部屋に入ってきたときにこの処理を実装する
         //情報を取得した時の処理
         socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
             // フラグを設定(true:get-attribute / false:create-element)
