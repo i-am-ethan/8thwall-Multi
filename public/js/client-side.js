@@ -73,10 +73,12 @@ AFRAME.registerComponent('random-cube-generator', {
 
         const testCube = document.createElement('a-box')
         testCube.object3D.position.set(3, 0, 0)
+        testCube.object3D.scale.set(3, 3, 3)
         // testCube.setAttribute('position','2 0 0')
-        testCube.setAttribute('scale','5 5 5')
+        // testCube.setAttribute('scale','5 5 5')
         scene.appendChild(testCube)
         console.log(testCube.object3D.position)
+        console.log(testCube.object3D.scale)
         console.log(scene)
 
 
