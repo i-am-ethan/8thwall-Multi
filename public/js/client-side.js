@@ -123,7 +123,7 @@ AFRAME.registerComponent('random-cube-generator', {
             console.log("動かした後のポジションを確認"+newCube.object3D.position)
             console.log("送信しているIDが正しいかの確認:"+randomID)
             sendBoxPosition(newCube) //500msに1回サーバーに送信する
-            setTimeout(hogehoge, 5000) //10秒後に実行する
+            setTimeout(hogehoge, 10000) //10秒後に実行する
         }
         hogehoge()
 
@@ -186,9 +186,9 @@ AFRAME.registerComponent('random-cube-generator', {
 
             const deleteCube = () => {
                 scene.removeChild(updateCube)
-                setTimeout(deleteCube, 5000)
+                setTimeout(deleteCube, 10000)
             }
-            setTimeout(deleteCube, 5000)
+            setTimeout(deleteCube, 10000)
 
             // let updateCube = document.getElementById(replaced);
             // console.log(updateCube.id)
