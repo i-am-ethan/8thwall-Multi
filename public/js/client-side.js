@@ -81,7 +81,10 @@ AFRAME.registerComponent('random-cube-generator', {
             let socketdata = {} //socket-data objectを生成
             let cube = [] //cube配列生成
             cube.push({color: "#ff3300"}) //cube配列に押し込んでいく
-            cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
+            cube.push({positionX: newCube.object3D.position.x}) //cube配列に押し込んでいく
+            cube.push({positionY: newCube.object3D.position.y}) //cube配列に押し込んでいく
+            cube.push({positionZ: newCube.object3D.position.z}) //cube配列に押し込んでいく
+            // cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
             cube.push({scale: "3 3 3"});
             cube.push({id: `created-box${randomID}`});
             socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
