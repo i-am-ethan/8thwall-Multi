@@ -59,7 +59,8 @@ AFRAME.registerComponent('random-cube-generator', {
 
 
         const newCube = document.createElement("a-box")
-        newCube.setAttribute("color", "#ff3300")
+        newCube.setAttribute("color", "red")
+        // newCube.setAttribute("color", "#ff3300")
         // newCube.setAttribute("color", `${randomCubeColor[random]}`)
         // newCube.setAttribute("scale", "3 3 3")
         newCube.setAttribute("class", "cantap")
