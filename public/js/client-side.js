@@ -69,7 +69,8 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-two-finger-rotate", "")
         newCube.setAttribute("xrextras-pinch-scale", "")
         scene.appendChild(newCube)
-        console.log("ちゃんとpositionがappendされているか"+scene)
+        console.log("ちゃんとpositionがappendされているか")
+        console.log(scene)
         console.log("1番最初にクリエイトして送信するとき:"+randomID)
 
         // 初回にboxをcreateする時の送信情報
