@@ -71,8 +71,8 @@ AFRAME.registerComponent('random-cube-generator', {
         newCube.setAttribute("xrextras-pinch-scale", "")
         console.log(newCube)
         scene.appendChild(newCube)
-        console.log("ちゃんとpositionがappendされているか")
-        console.log("1番最初にクリエイトして送信するとき:"+randomID)
+        // console.log("ちゃんとpositionがappendされているか")
+        // console.log("1番最初にクリエイトして送信するとき:"+randomID)
 
         // 初回にboxをcreateする時の送信情報
         function sendGenarateBox(newCube){
@@ -102,9 +102,9 @@ AFRAME.registerComponent('random-cube-generator', {
         }
 
         const hogehoge = () => {
-            console.log("ポジションの共有を開始する")
+            // console.log("ポジションの共有を開始する")
             console.log("動かした後のポジションを確認"+newCube.object3D.position)
-            console.log("送信しているIDが正しいかの確認:"+randomID)
+            // console.log("送信しているIDが正しいかの確認:"+randomID)
             sendBoxPosition(newCube) //500msに1回サーバーに送信する
             // setTimeout(hogehoge, 500)
             setTimeout(hogehoge, 10000) //10秒後に実行する
@@ -115,7 +115,7 @@ AFRAME.registerComponent('random-cube-generator', {
         //情報を取得した時の処理
         socket.on("generate_box", (data) => { //sceneを認識する為にこの位置に設定
             let cubeData = JSON.parse(data)
-            console.log(cubeData)
+            // console.log(cubeData)
             let cube = cubeData.cube;
             let newCube = document.createElement("a-box");
             newCube.setAttribute("color", cube[0].color)
@@ -123,19 +123,19 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("scale", cube[2].scale)
             newCube.setAttribute("id", cube[3].id)
             scene.appendChild(newCube)
-            console.log("cubeの配列"+JSON.stringify(cube))
-            console.log(scene)
+            // console.log("cubeの配列"+JSON.stringify(cube))
+            // console.log(scene)
         })
 
         socket.on("update_box_position", (data) => { //sceneを認識する為にこの位置に設定
 
-            console.log("positionのupdateを受け取る")
+            // console.log("positionのupdateを受け取る")
 
             let cubeData = JSON.parse(data)
             let cube = cubeData.cube;
-            console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
-            console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3]))
-            console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3].id))
+            // console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
+            // console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3]))
+            // console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3].id))
             let updateCubeID = JSON.stringify(cube[3].id)
             let replaced = updateCubeID.replace(/"/g, '')//ダブルクオーテーションを削除
 
