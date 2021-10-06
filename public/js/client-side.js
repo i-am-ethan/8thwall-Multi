@@ -74,11 +74,11 @@ AFRAME.registerComponent('random-cube-generator', {
         console.log(newCube.object3D.scale)
         scene.appendChild(newCube)
 
-        const deleteCube = () => {
-            scene.removeChild(newCube)
-            setTimeout(deleteCube, 10000)
-        }
-        setTimeout(deleteCube, 10000)
+        // const deleteCube = () => {
+        //     scene.removeChild(newCube)
+        //     setTimeout(deleteCube, 10000)
+        // }
+        // setTimeout(deleteCube, 10000)
 
 
 
