@@ -178,6 +178,12 @@ AFRAME.registerComponent('random-cube-generator', {
             console.log(updateCube.object3D.position.z)
             console.log(updateCube.object3D.scale)
 
+            const deleteCube = () => {
+                scene.removeChild(updateCube)
+                setTimeout(deleteCube, 10000)
+            }
+            setTimeout(deleteCube, 10000)
+
             // let updateCube = document.getElementById(replaced);
             // console.log(updateCube.id)
             // console.log(updateCube.object3D.position)
