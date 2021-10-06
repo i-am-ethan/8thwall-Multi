@@ -85,7 +85,9 @@ AFRAME.registerComponent('random-cube-generator', {
             cube.push({positionY: newCube.object3D.position.y}) //cube配列に押し込んでいく
             cube.push({positionZ: newCube.object3D.position.z}) //cube配列に押し込んでいく
             // cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
-            cube.push({scale: "3 3 3"});
+            cube.push({scaleX: "3"});
+            cube.push({scaleY: "3"});
+            cube.push({scaleZ: "3"});
             cube.push({id: `created-box${randomID}`});
             socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
             socket.emit("generate_box", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
@@ -102,7 +104,10 @@ AFRAME.registerComponent('random-cube-generator', {
             cube.push({positionY: newCube.object3D.position.y}) //cube配列に押し込んでいく
             cube.push({positionZ: newCube.object3D.position.z}) //cube配列に押し込んでいく
             // cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
-            cube.push({scale: "3 3 3"});
+            // cube.push({scale: "3 3 3"});
+            cube.push({scaleX: "3"});
+            cube.push({scaleY: "3"});
+            cube.push({scaleZ: "3"});
             cube.push({id: `created-box${randomID}`});
             socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
             socket.emit("update_box_position", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
@@ -127,10 +132,10 @@ AFRAME.registerComponent('random-cube-generator', {
             newCube.setAttribute("color", cube[0].color)
             newCube.object3D.position.set(cube[1].positionX, cube[2].positionY, cube[3].positionZ)
             // newCube.object3D.position.set(cube[1].position)
-            newCube.object3D.scale.set(cube[4].scale)
+            newCube.object3D.scale.set(cube[4].scaleX, cube[5].scaleY, cube[6].scaleZ)
             // newCube.setAttribute("position", cube[1].position)
             // newCube.setAttribute("scale", cube[2].scale)
-            newCube.setAttribute("id", cube[5].id)
+            newCube.setAttribute("id", cube[7].id)
             scene.appendChild(newCube)
             // console.log("cubeの配列"+JSON.stringify(cube))
             // console.log(scene)
@@ -147,7 +152,7 @@ AFRAME.registerComponent('random-cube-generator', {
             // console.log("positionをupdateした時の配列の中身"+JSON.stringify(cube))
             // console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3]))
             // console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[3].id))
-            let updateCubeID = JSON.stringify(cube[5].id)
+            let updateCubeID = JSON.stringify(cube[7].id)
             let replaced = updateCubeID.replace(/"/g, '')//ダブルクオーテーションを削除
 
 
@@ -160,17 +165,17 @@ AFRAME.registerComponent('random-cube-generator', {
             // // // if(!updateCube){return}
             updateCube.setAttribute("color", cube[0].color)
             newCube.object3D.position.set(cube[1].positionX, cube[2].positionY, cube[3].positionZ)
-            updateCube.object3D.scale.set(cube[4].scale)
+            newCube.object3D.scale.set(cube[4].scaleX, cube[5].scaleY, cube[6].scaleZ)
             // updateCube.setAttribute("position", cube[1].position)
             // updateCube.setAttribute("scale", cube[2].scale)
-            updateCube.setAttribute("id", cube[5].id)
+            updateCube.setAttribute("id", cube[7].id)
             scene.appendChild(updateCube)
             // console.log("位置情報を取得して、getElementByIDをした後のscene")
             console.log(scene)
             console.log(updateCube.id)
-            console.log(updateCube.object3D.positionX)
-            console.log(updateCube.object3D.positionY)
-            console.log(updateCube.object3D.positionZ)
+            console.log(updateCube.object3D.position.x)
+            console.log(updateCube.object3D.position.y)
+            console.log(updateCube.object3D.position.z)
             console.log(updateCube.object3D.scale)
 
             // let updateCube = document.getElementById(replaced);
