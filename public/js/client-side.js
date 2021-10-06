@@ -29,7 +29,7 @@ socket.on("connect", () => {
 socket.on("client_to_server_join", (data)=>{
     // console.log("dataです！！！！！！！"+data)
     const debugConsole03 = document.createElement("p")
-    debugConsole03.innerHTML = "HELLO!!" + data + "が入室しました";
+    debugConsole03.innerHTML = "[IN]" + data + "が入室しました";
     debugConsole.appendChild(debugConsole03)
 })
 
