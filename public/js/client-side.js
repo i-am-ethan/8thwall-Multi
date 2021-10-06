@@ -142,7 +142,7 @@ AFRAME.registerComponent('random-cube-generator', {
             // idを取得する
 
             let updateCube = document.getElementById(replaced);
-            console.log(updateCube)
+            console.log(updateCube.id)
             console.log(updateCube.object3D.position)
             console.log(updateCube.object3D.scale)
             // // // if(!updateCube){return}
