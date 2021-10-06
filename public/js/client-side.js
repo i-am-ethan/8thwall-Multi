@@ -75,7 +75,7 @@ AFRAME.registerComponent('random-cube-generator', {
         testCube.setAttribute('position','0 0 0')
         testCube.setAttribute('scale','5 5 5')
         scene.appendChild(testCube)
-        console.log(testCube)
+        console.log(testCube.object3D.position)
         console.log(scene)
 
 
