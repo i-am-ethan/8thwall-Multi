@@ -96,6 +96,7 @@ AFRAME.registerComponent('random-cube-generator', {
             let cube = [] //cube配列生成
             cube.push({color: "#ff3300"}) //cube配列に押し込んでいく
             cube.push({position: newCube.object3D.position.x +" ,"+newCube.object3D.position.y+", "+newCube.object3D.position.z}) //cube配列に押し込んでいく
+            // cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
             cube.push({scale: "3 3 3"});
             cube.push({id: `created-box${randomID}`});
             socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
@@ -153,7 +154,7 @@ AFRAME.registerComponent('random-cube-generator', {
             // console.log(updateCube.object3D.scale)
             // // // if(!updateCube){return}
             updateCube.setAttribute("color", cube[0].color)
-            updateCube.object3D.position.set(cube[1].position.x, cube[1].position.y, cube[1].position.z)
+            updateCube.object3D.position.set(cube[1].position)
             updateCube.object3D.scale.set(cube[2].scale)
             // updateCube.setAttribute("position", cube[1].position)
             // updateCube.setAttribute("scale", cube[2].scale)
