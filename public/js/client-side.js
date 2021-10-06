@@ -138,10 +138,11 @@ AFRAME.registerComponent('random-cube-generator', {
             let updateCubeID = JSON.stringify(cube[3].id)
             let replaced = updateCubeID.replace(/"/g, '')//ダブルクオーテーションを削除
 
-            console.log(newCube)
 
-            // let updateCube = document.getElementById(replaced);
-            // console.log(updateCube)
+            // idを取得する
+
+            let updateCube = document.getElementById(replaced);
+            console.log(updateCube)
             // // // if(!updateCube){return}
             // updateCube.setAttribute("color", cube[0].color)
             // updateCube.setAttribute("position", cube[1].position)
