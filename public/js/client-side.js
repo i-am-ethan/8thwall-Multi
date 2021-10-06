@@ -152,6 +152,9 @@ AFRAME.registerComponent('random-cube-generator', {
             // // console.log("位置情報を取得して、getElementByIDをした後のscene")
             // console.log(scene)
 
+            let test = document.getElementById("test")
+            console.log(test)
+
 
         })
 
