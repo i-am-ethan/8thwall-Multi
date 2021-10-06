@@ -63,7 +63,8 @@ AFRAME.registerComponent('random-cube-generator', {
         // newCube.setAttribute("color", `${randomCubeColor[random]}`)
         // newCube.setAttribute("scale", "3 3 3")
         newCube.setAttribute("class", "cantap")
-        newCube.setAttribute("position", "0 0 0")
+        // newCube.setAttribute("position", "0 0 0")
+        newCube.object3D.position.set(1, 2, 3);
         newCube.setAttribute("scale", "3 3 3")
         newCube.setAttribute("id", `created-box${randomID}`)
         newCube.setAttribute("xrextras-hold-drag", "")
