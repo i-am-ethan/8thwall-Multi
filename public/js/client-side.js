@@ -79,8 +79,8 @@ AFRAME.registerComponent('random-cube-generator', {
         console.log(scene)
 
 
-        let test = document.getElementById("test")
-        console.log(test)
+        // let test = document.getElementById("test")
+        // console.log(test)
         // console.log("ちゃんとpositionがappendされているか")
         // console.log("1番最初にクリエイトして送信するとき:"+randomID)
 
