@@ -138,16 +138,18 @@ AFRAME.registerComponent('random-cube-generator', {
             let updateCubeID = JSON.stringify(cube[3].id)
             let replaced = updateCubeID.replace(/"/g, '')//ダブルクオーテーションを削除
 
-            let updateCube = document.getElementById(replaced);
-            console.log(updateCube)
-            // // if(!updateCube){return}
-            updateCube.setAttribute("color", cube[0].color)
-            updateCube.setAttribute("position", cube[1].position)
-            updateCube.setAttribute("scale", cube[2].scale)
-            updateCube.setAttribute("id", cube[3].id)
-            scene.appendChild(updateCube)
-            // console.log("位置情報を取得して、getElementByIDをした後のscene")
-            console.log(scene)
+            console.log(newCube)
+
+            // let updateCube = document.getElementById(replaced);
+            // console.log(updateCube)
+            // // // if(!updateCube){return}
+            // updateCube.setAttribute("color", cube[0].color)
+            // updateCube.setAttribute("position", cube[1].position)
+            // updateCube.setAttribute("scale", cube[2].scale)
+            // updateCube.setAttribute("id", cube[3].id)
+            // scene.appendChild(updateCube)
+            // // console.log("位置情報を取得して、getElementByIDをした後のscene")
+            // console.log(scene)
 
 
         })
