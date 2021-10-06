@@ -164,8 +164,8 @@ AFRAME.registerComponent('random-cube-generator', {
             // console.log(updateCube.object3D.scale)
             // // // if(!updateCube){return}
             updateCube.setAttribute("color", cube[0].color)
-            newCube.object3D.position.set(cube[1].positionX, cube[2].positionY, cube[3].positionZ)
-            newCube.object3D.scale.set(cube[4].scaleX, cube[5].scaleY, cube[6].scaleZ)
+            updateCube.object3D.position.set(cube[1].positionX, cube[2].positionY, cube[3].positionZ)
+            updateCube.object3D.scale.set(cube[4].scaleX, cube[5].scaleY, cube[6].scaleZ)
             // updateCube.setAttribute("position", cube[1].position)
             // updateCube.setAttribute("scale", cube[2].scale)
             updateCube.setAttribute("id", cube[7].id)
