@@ -92,7 +92,9 @@ AFRAME.registerComponent('random-cube-generator', {
         function sendBoxPosition(newCube){
             let socketdata = {} //socket-data objectを生成
             let cube = [] //cube配列生成
+            cube.push({color: "#ff3300"}) //cube配列に押し込んでいく
             cube.push({position: newCube.object3D.position.x +" "+newCube.object3D.position.y+" "+newCube.object3D.position.z}) //cube配列に押し込んでいく
+            cube.push({scale: "3 3 3"});
             cube.push({id: `created-box${randomID}`});
             socketdata["cube"] = cube; //socket-dataオブジェクトにcubeを押し込む
             socket.emit("update_box_position", JSON.stringify(socketdata));//generate_boxという名前でsocket-dataをSocket.ioサーバーへ送信
@@ -139,8 +141,10 @@ AFRAME.registerComponent('random-cube-generator', {
             let updateCube = document.getElementById(replaced);
             console.log(updateCube)
             // // if(!updateCube){return}
-            updateCube.setAttribute("position", cube[0].position)
-            updateCube.setAttribute("id", cube[1].id)
+            updateCube.setAttribute("color", cube[0].color)
+            updateCube.setAttribute("position", cube[1].position)
+            updateCube.setAttribute("scale", cube[2].scale)
+            updateCube.setAttribute("id", cube[3].id)
             scene.appendChild(updateCube)
             // console.log("位置情報を取得して、getElementByIDをした後のscene")
             console.log(scene)
