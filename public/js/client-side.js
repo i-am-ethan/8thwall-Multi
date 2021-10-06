@@ -143,7 +143,7 @@ AFRAME.registerComponent('random-cube-generator', {
             updateCube.setAttribute("id", cube[1].id)
             scene.appendChild(updateCube)
             // console.log("位置情報を取得して、getElementByIDをした後のscene")
-            // console.log(scene)
+            console.log(scene)
 
 
         })
