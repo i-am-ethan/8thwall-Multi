@@ -134,7 +134,7 @@ AFRAME.registerComponent('random-cube-generator', {
             console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[1]))
             console.log("どのid名のcubeを取得したか!!!!!"+JSON.stringify(cube[1].id))
             let updateCubeID = JSON.stringify(cube[1].id)
-            let replaced = updateCubeID.replace('""', '')
+            let replaced = updateCubeID.replace(/"/g, '')
             console.log(updateCubeID)
             console.log(replaced)
             let testID ="test"
