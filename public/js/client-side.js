@@ -103,7 +103,7 @@ AFRAME.registerComponent('random-cube-generator', {
             sendBoxPosition(newCube) //500msに1回サーバーに送信する
             // setTimeout(hogehoge, 500)
         }
-        setTimeout(hogehoge, 7000) //7秒後に実行する
+        setTimeout(hogehoge, 10000) //7秒後に実行する
         // hogehoge()
 
         // 誰かが部屋に入ってきたときにこの処理を実装する
