@@ -143,10 +143,10 @@ AFRAME.registerComponent('random-cube-generator', {
 
             // idを取得する
 
-            let updateCube = document.getElementById(replaced);
-            console.log(updateCube.id)
-            console.log(updateCube.object3D.position)
-            console.log(updateCube.object3D.scale)
+            let updateCube = document.createElement("a-box");
+            // console.log(updateCube.id)
+            // console.log(updateCube.object3D.position)
+            // console.log(updateCube.object3D.scale)
             // // // if(!updateCube){return}
             updateCube.setAttribute("color", cube[0].color)
             updateCube.object3D.position.set(cube[1].position)
@@ -160,6 +160,25 @@ AFRAME.registerComponent('random-cube-generator', {
             console.log(updateCube.id)
             console.log(updateCube.object3D.position)
             console.log(updateCube.object3D.scale)
+
+            // let updateCube = document.getElementById(replaced);
+            // console.log(updateCube.id)
+            // console.log(updateCube.object3D.position)
+            // console.log(updateCube.object3D.scale)
+            // // // // if(!updateCube){return}
+            // updateCube.setAttribute("color", cube[0].color)
+            // updateCube.object3D.position.set(cube[1].position)
+            // updateCube.object3D.scale.set(cube[2].scale)
+            // // updateCube.setAttribute("position", cube[1].position)
+            // // updateCube.setAttribute("scale", cube[2].scale)
+            // updateCube.setAttribute("id", cube[3].id)
+            // scene.appendChild(updateCube)
+            // // console.log("位置情報を取得して、getElementByIDをした後のscene")
+            // console.log(scene)
+            // console.log(updateCube.id)
+            // console.log(updateCube.object3D.position)
+            // console.log(updateCube.object3D.scale)
+
 
             // newCube.object3D.position.set(0, 0, 0)
             // newCube.object3D.scale.set(3, 3, 3)
